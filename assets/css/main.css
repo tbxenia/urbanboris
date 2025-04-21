@@ -982,6 +982,9 @@ body:has(.top-menu:focus) main{
 }
 .base-card__footer{
   width:100%;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
   padding:10px 5px;
 }
 .base-card__footer:not(.base-card--column .base-card__footer){
@@ -2678,8 +2681,14 @@ body:has(.burger.active){
 .top-menu .base-card img{
   height:100%;
 }
+.top-menu .base-card__footer {
+	-webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
 .top-menu .base-card__title{
   font-size:14px;
+  width: fit-content;
 }
 .top-menu-show-all-btn{
   font-size:12px;
