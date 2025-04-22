@@ -1775,16 +1775,14 @@ html:has(.modal.active) {
 }
 
 .modal .modal-closer {
-	width: 60px;
-	height: 60px;
+	width: 20px;
+	height: 20px;
 	min-height: initial;
 	z-index: 3;
 }
 
 .modal .modal-closer svg {
 	fill: var(--primary);
-	width: 24px;
-	height: 24px;
 }
 
 .inner-section__wrapper {
@@ -2493,9 +2491,21 @@ section:has(.top-banner) {
 	padding: 20px;
 }
 
+.size-table-modal .modal-header {
+	position: relative;
+	min-height: 60px;
+	padding: 20px 0;
+}
+
 .size-modal .modal-closer {
 	position: absolute;
 	top: -60px;
+	right: 0;
+}
+
+.size-table-modal .modal-closer {
+	position: absolute;
+	top: 0;
 	right: 0;
 }
 
@@ -2533,6 +2543,25 @@ section:has(.top-banner) {
 	-webkit-transform: translateY(100%);
 	-ms-transform: translateY(100%);
 	transform: translateY(100%);
+}
+
+@media(max-width: 991px) {
+	.size-table-modal.active .modal-wrapper {
+		bottom: 0;
+        left: 0;
+        top: auto;
+        height: fit-content;
+        width: auto;
+        max-width: 100%;
+	}
+	
+	.modal.size-table-modal .modal-closer {
+		top: -60px;
+	}
+	
+	.modal.size-table-modal .modal-closer svg path {
+		stroke: var(--light);
+	}
 }
 
 .product-card {
@@ -3856,33 +3885,37 @@ body:has(.burger.active) {
 }
 
 .size-table {
-	background-color: var(--light);
 	overflow-x: auto;
 }
 
-.size-table__grid {
-	display: grid;
-	min-width: 420px;
+.size-table table {
+	border: 0;
+	border-collapse: collapse;
 }
 
-.size-table__grid-item {
-	display: grid;
-	grid-template-columns: 160px repeat(5, 1fr);
-	gap: 10px;
-	padding: 12px 20px;
-}
-
-.size-table__grid-item span {
+.size-table table thead td,
+.size-table table tbody td {
 	font-size: 14px;
-	text-transform: uppercase;
+	padding: 22px 10px;
+	border-bottom: 1px solid #F2EFEF;
 }
 
-.size-table__grid-item span:first-child {
-	padding-right: 20px;
-}
-
-.size-table__grid-item span:not(:first-child) {
+.size-table table thead td:not(:first-child),
+.size-table table tbody td:not(:first-child) {
 	text-align: center;
+}
+
+.size-table table thead td:first-child,
+.size-table table tbody td:first-child {
+	padding: 22px 20px;
+	white-space: nowrap;
+}
+
+@media(max-width: 991px) {
+	.size-table table thead td {
+		background: var(--light);
+		border-bottom: 1px solid var(--light);
+	}
 }
 
 .catalog-detail {
