@@ -3929,6 +3929,20 @@ body:has(.burger.active) {
 		white-space: normal;
 		padding: 16px 10px;
 	}
+	
+	.size-table table thead td,
+	.size-table table tbody td {
+		font-size: 12px;
+	}
+	
+	.size-table-modal .modal-header {
+		padding: 20px;
+	}
+	
+	.size-table-modal.active .modal-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .catalog-detail {
@@ -6010,6 +6024,10 @@ button.swiper-pagination-bullet {
 
 	.sidebar__mobile {
 		display: block;
+	}
+	
+	.size-table-modal .modal-closer {
+		right: 10px;
 	}
 }
 
