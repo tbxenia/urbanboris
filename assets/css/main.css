@@ -533,8 +533,6 @@ body:has(.top-menu:focus) main {
 	top: 0;
 	width: 100%;
 	background-color: transparent;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
 	will-change: auto;
 	-webkit-transition: -webkit-transform 0.3s linear;
 	transition: -webkit-transform 0.3s linear;
@@ -544,6 +542,11 @@ body:has(.top-menu:focus) main {
 	-ms-transform: translateY(0);
 	transform: translateY(0);
 	z-index: 99;
+}
+
+.header.blur {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 
 .header:has(.burger.active),

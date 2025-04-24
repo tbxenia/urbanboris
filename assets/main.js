@@ -5904,10 +5904,16 @@ window.addEventListener("scroll", () => {
   if (scrollTop !== lastScrollTop) {
     if (scrollTop > lastScrollTop) {
       header.classList.add("hide");
+	  header.classList.remove("blur");
     } else {
       header.classList.remove("hide");
+	  header.classList.add("blur");
     }
     lastScrollTop = scrollTop;
+  }
+  
+  if( scrollTop == 0) {
+	header.classList.remove("blur");
   }
 });
 const items = document.querySelectorAll(".cart-item");
