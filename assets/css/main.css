@@ -3908,6 +3908,11 @@ body:has(.burger.active) {
 	text-align: center;
 }
 
+.size-table table thead td:last-child,
+.size-table table tbody td:last-child {
+	padding-right: 20px;
+}
+
 .size-table table thead td:first-child,
 .size-table table tbody td:first-child {
 	padding: 22px 20px;
@@ -3921,16 +3926,29 @@ body:has(.burger.active) {
 	}
 }
 
+@media(max-width: 991px) {
+	.size-table table thead td:last-child,
+	.size-table table tbody td:last-child {
+		padding-right: 10px;
+	}
+}
+
 @media(max-width: 576px) {
 	.size-table table thead td:first-child,
 	.size-table table tbody td:first-child {
 		white-space: normal;
-		padding: 16px 20px;
+		padding: 16px 10px 16px 20px;
 	}
+	
+	.size-table table thead td:last-child,
+	.size-table table tbody td:last-child {
+		padding-right: 20px;
+	}
+	
 	.size-table table thead td,
 	.size-table table tbody td {
 		white-space: normal;
-		padding: 16px 10px;
+		padding: 16px 8px;
 	}
 	
 	.size-table table thead td,
