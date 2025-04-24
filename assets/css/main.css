@@ -2562,7 +2562,8 @@ section:has(.top-banner) {
 		top: -60px;
 	}
 	
-	.modal.size-table-modal .modal-closer svg path {
+	.modal.size-table-modal .modal-closer svg path,
+	.modal.size-modal .modal-closer svg path	{
 		stroke: var(--light);
 	}
 }
