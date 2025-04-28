@@ -2471,7 +2471,7 @@ section:has(.top-banner) {
 .size-modal .modal-wrapper {
 	width: 100%;
 	max-width: 100%;
-	top: revert;
+	top: auto;
 	left: 0;
 	bottom: 0;
 	-webkit-transform: none;
