@@ -2537,9 +2537,9 @@ section:has(.top-banner) {
 }
 
 .size-modal.active .modal-wrapper {
-	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	transform: translateX(0);
+	-webkit-transform: translate(0,0);
+	-ms-transform: translate(0,0);
+	transform: translate(0,0);
 }
 
 .size-modal.active.unactive .modal-wrapper {
@@ -2565,6 +2565,11 @@ section:has(.top-banner) {
 	.modal.size-table-modal .modal-closer svg path,
 	.modal.size-modal .modal-closer svg path	{
 		stroke: var(--light);
+	}
+	
+	.size-table-modal .modal-closer,
+	.size-modal .modal-closer {
+		right: 10px;
 	}
 }
 
@@ -6046,11 +6051,6 @@ button.swiper-pagination-bullet {
 
 	.sidebar__mobile {
 		display: block;
-	}
-	
-	.size-table-modal .modal-closer,
-	.size-modal .modal-closer {
-		right: 10px;
 	}
 }
 
