@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<title>Urban</title>
 		<link rel="stylesheet" href="./assets/css/main.css">
+		<link rel="stylesheet" href="./assets/css/datepicker.css">
 	</head>
 	<body>
 		<header class="header">
@@ -837,12 +838,15 @@
 												<div class="tab" id="tab-1">
 													<div class="order__personal-form">
 														<div class="form-field">
-															<select>
-																<option value="#">Новый адрес</option>
-																<option value="#">Новый адрес 1</option>
-																<option value="#">Новый адрес 2</option>
-																<option value="#">Новый адрес 3</option>
-															</select>
+															<div class="__select" data-state="">
+																<div class="__select__title"></div>
+																<div class="__select__content">
+																	<input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked="">
+																	<label for="singleSelect0" tabindex="0" class="__select__label" data-value="Новый адрес"></label>
+																	<input id="singleSelect1" class="__select__input" type="radio" name="singleSelect">
+																	<label for="singleSelect1" tabindex="0" class="__select__label" data-value="г Москва, ул Мясницкая, д 12, кв. 23, 1 подъезд, 6 этаж"></label>
+																</div>
+															</div>
 														</div>
 														<div class="form-field">
 															<input type="text" placeholder="Город, область, улица">
@@ -871,9 +875,7 @@
 														</div>
 														<div class="form-wrapper">
 															<div class="form-field">
-																<select>
-																	<option value="#">13 января 2025</option>
-																</select>
+																 <input type="text" id="datepicker">
 															</div>
 															<div class="form-field">
 																<select>
@@ -1183,6 +1185,9 @@
 				</div>
 			</div>
 		</div>
+		<script src="./assets/js/jquery-3.7.1.js"></script>
+		<script src="./assets/js/jquery-ui.js"></script>
+		<script src="./assets/js/scripts.js"></script>
 		<script src="./assets/main.js"></script>
 	</body>
 </html>
