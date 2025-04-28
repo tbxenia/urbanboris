@@ -2482,9 +2482,6 @@ section:has(.top-banner) {
 	transform: translateY(100%);
 	padding: 20px 0;
 	height: auto;
-	max-height: -webkit-fit-content;
-	max-height: -moz-fit-content;
-	max-height: fit-content;
 	-webkit-transition: -webkit-transform 0.3s 0.1s linear;
 	transition: -webkit-transform 0.3s 0.1s linear;
 	transition: transform 0.3s 0.1s linear;
