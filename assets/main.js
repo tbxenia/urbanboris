@@ -5851,8 +5851,14 @@ burger.addEventListener("click", () => {
   burger.classList.toggle("active");
   if (burger.classList.contains("active")) {
     body$2.classList.add("body-locked");
+	document.querySelectorAll(".top-menu").forEach((item) => {
+		item.classList.add('hidden');
+	});
   } else {
     body$2.classList.remove("body-locked");
+	document.querySelectorAll(".top-menu").forEach((item) => {
+		item.classList.remove('hidden');
+	});
   }
 });
 const items$1 = document.querySelectorAll(".top-multilevel-menu__main-list a");
