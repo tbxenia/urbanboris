@@ -2556,6 +2556,7 @@ section:has(.top-banner) {
         height: fit-content;
         width: auto;
         max-width: 100%;
+		padding: 20px 20px 60px 20px;
 	}
 	
 	.size-table-modal.active .modal-wrapper {
