@@ -2558,6 +2558,12 @@ section:has(.top-banner) {
         max-width: 100%;
 	}
 	
+	.size-table-modal.active .modal-wrapper {
+		-webkit-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		transform: translateY(100%);
+	}
+	
 	.modal.size-table-modal .modal-closer {
 		top: -60px;
 	}
@@ -2570,6 +2576,12 @@ section:has(.top-banner) {
 	.size-table-modal .modal-closer,
 	.size-modal .modal-closer {
 		right: 10px;
+	}
+	
+	.size-table-modal .modal-header {
+		min-height: 0;
+		padding: 0 0 20px 0;
+		gap: 0;
 	}
 }
 
@@ -3963,7 +3975,7 @@ body:has(.burger.active) {
 	}
 	
 	.size-table-modal .modal-header {
-		padding: 20px;
+		padding: 0 20px 20px;
 	}
 	
 	.size-table-modal.active .modal-wrapper {
