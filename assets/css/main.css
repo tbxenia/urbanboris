@@ -2481,7 +2481,7 @@ section:has(.top-banner) {
 	-ms-transform: translateY(100%);
 	transform: translateY(100%);
 	padding: 20px 0;
-	height: 100%;
+	height: auto;
 	max-height: -webkit-fit-content;
 	max-height: -moz-fit-content;
 	max-height: fit-content;
