@@ -6481,8 +6481,7 @@ button.swiper-pagination-bullet {
 	background: var(--primary);
 	border-radius: 50%;
 	content: '';
-	display: block;
-    float: left;
+	display: inline-block;
     margin-top: 8px;
     margin-right: 10px;
 }
@@ -6491,4 +6490,55 @@ button.swiper-pagination-bullet {
 	.inner-section__content .base-subtitle {
         font-size: 14px;
     }
+}
+
+.page__subtitle {
+	margin-bottom: 40px;
+}
+
+.page__subtitle p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.page__subtitle p:last-child {
+	margin-bottom: 0;
+}
+
+.content-block ol {
+	list-style-type: none; 
+	counter-reset: num;
+	margin-bottom: 20px;
+}
+
+.content-block ol li {
+	position: relative;	
+}
+
+.content-block ol li:before {
+	content: counter(num) "."; 
+	counter-increment: num;
+	display: inline-block;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.content-block table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.content-block table thead td {
+	background: #F9F9F9;
+}
+
+.content-block .size-table table thead td,
+.content-block .size-table table tbody td {
+	width: 2%;
+	text-align: left;
+}
+
+.content-block .size-table table thead td:first-child,
+.content-block .size-table table tbody td:first-child {
+    white-space: normal;
 }
