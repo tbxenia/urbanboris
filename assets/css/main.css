@@ -6542,3 +6542,9 @@ button.swiper-pagination-bullet {
 .content-block .size-table table tbody td:first-child {
     white-space: normal;
 }
+
+@media(max-width: 576px) {
+	.content-block table {
+		width: auto;
+	}
+}
