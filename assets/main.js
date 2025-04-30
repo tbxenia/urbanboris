@@ -6161,3 +6161,13 @@ for (let i = 0; i < selectSingle_labels.length; i++) {
     selectSingle.setAttribute('data-state', '');
   });
 }
+
+$(document).ready(function(){
+  $('.tabs-nav__item').on('click', function(event) {   
+    console.log($(this).attr('data-tab'));     
+    $(this).parents('.tabs').find('.tabs-nav__item').removeClass('active');
+    $(this).addClass('active');
+    $('.tabs-content').find('.tab').removeClass('active');
+    $('#'+$(this).attr('data-tab')).addClass('active');        
+  });
+});

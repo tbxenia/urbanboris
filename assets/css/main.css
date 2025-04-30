@@ -6450,3 +6450,45 @@ button.swiper-pagination-bullet {
 	font-size: 14px;
 	opacity: 1;
 }
+
+.content-block h2 {
+	font-weight: 700;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.content-block p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.accordeon-body>.content-block p+h2,
+.accordeon-body>.content-block ul+h2 {
+	margin-top: 40px;
+}
+
+.content-block ul li {
+	font-size: 16px;
+	position: relative;
+	margin-bottom: 20px;
+    line-height: 20px;
+}
+
+.content-block ul li:before{
+	width: 3px;
+	height: 3px;
+	background: var(--primary);
+	border-radius: 50%;
+	content: '';
+	display: block;
+    float: left;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+@container main (min-width: 375px) {
+	.inner-section__content .base-subtitle {
+        font-size: 14px;
+    }
+}
