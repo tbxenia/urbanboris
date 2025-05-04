@@ -5810,7 +5810,6 @@ if (opener$2) {
     !!state ? node.classList.add("active") : node.classList.remove("active");
   };
   opener$2.addEventListener("click", () => {
-	  console.log('test')
     setActiveClass(opener$2, true);
     setActiveClass(filter, true);
 	bodyAll.classList.add("body-locked");
