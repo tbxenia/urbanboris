@@ -5805,16 +5805,20 @@ const opener$2 = document.querySelector(".filter-opener-btn");
 if (opener$2) {
   const filter = document.querySelector(".filter-wrapper");
   const closer = document.querySelector(".filter-closer");
+  const bodyAll = document.querySelector("body");
   const setActiveClass = (node, state) => {
     !!state ? node.classList.add("active") : node.classList.remove("active");
   };
   opener$2.addEventListener("click", () => {
+	  console.log('test')
     setActiveClass(opener$2, true);
     setActiveClass(filter, true);
+	bodyAll.classList.add("body-locked");
   });
   closer.addEventListener("click", () => {
     setActiveClass(opener$2);
     setActiveClass(filter);
+	bodyAll.classList.remove("body-locked");
   });
 }
 const opener$1 = document.querySelector(".search-title-opener");
