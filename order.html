@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<title>Urban</title>
 		<link rel="stylesheet" href="./assets/css/main.css">
-		<link rel="stylesheet" href="./assets/css/datepicker.css">
+		<link rel="stylesheet" href="./assets/css/datepicker.min.css">
 	</head>
 	<body>
 		<header class="header">
@@ -802,152 +802,162 @@
 									</div>
 								</div>
 								
-								<div class="accordion opened">
-									<div class="ac-header">
-										Способ получения
-									</div>
-									<div class="ac-content" style="display: block;">
-										<div class="order__tabs">
-											<div class="order__tabs-list">
-												<div class="order__tab" data-tab="#tab-1">
-													<div class="order__tabs-title">
-														Доставка курьером
+								<div class="accordeon">
+									<div class="accordeon-item expanded">
+										<div class="accordeon-header">
+											Способ получения
+										</div>
+										<div class="accordeon-body">
+											<div class="content-block">
+												<div class="order__tabs">
+													<div class="order__tabs-list ">
+														<div class="order__tab active tabs-nav__item" data-tab="tab-1">
+															<div class="order__tabs-title">
+																Доставка курьером
+															</div>
+															<div class="order__tabs-subtitle">
+																бесплатно
+															</div>
+														</div>
+														<div class="order__tab tabs-nav__item" data-tab="tab-2">
+															<div class="order__tabs-title">
+																В магазине
+															</div>
+															<div class="order__tabs-subtitle">
+																бесплатно
+															</div>
+														</div>
+														<div class="order__tab tabs-nav__item" data-tab="tab-3">
+															<div class="order__tabs-title">
+																В пункт выдачи
+															</div>
+															<div class="order__tabs-subtitle">
+																бесплатно
+															</div>
+														</div>
 													</div>
-													<div class="order__tabs-subtitle">
-														бесплатно
-													</div>
-												</div>
-												<div class="order__tab" data-tab="#tab-2">
-													<div class="order__tabs-title">
-														В магазине
-													</div>
-													<div class="order__tabs-subtitle">
-														бесплатно
-													</div>
-												</div>
-												<div class="order__tab active" data-tab="#tab-3">
-													<div class="order__tabs-title">
-														В пункт выдачи
-													</div>
-													<div class="order__tabs-subtitle">
-														бесплатно
-													</div>
-												</div>
-											</div>
-											<div class="order__tabs-content">
-												<div class="tab" id="tab-1">
-													<div class="order__personal-form">
-														<div class="form-field">
-															<div class="__select" data-state="">
-																<div class="__select__title"></div>
-																<div class="__select__content">
-																	<input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked="">
-																	<label for="singleSelect0" tabindex="0" class="__select__label" data-value="Новый адрес"></label>
-																	<input id="singleSelect1" class="__select__input" type="radio" name="singleSelect">
-																	<label for="singleSelect1" tabindex="0" class="__select__label" data-value="г Москва, ул Мясницкая, д 12, кв. 23, 1 подъезд, 6 этаж"></label>
+													<div class="order__tabs-content tabs-content">
+														<div class="tab active" id="tab-1">
+															<div class="order__personal-form">
+																<div class="form-field">
+																	<div class="custom-select">
+																		<div class="select-selected" data-type="address">Новый адрес</div>
+																		<div class="select-items select-hide">
+																			<div data-value="newAddress" >Новый адрес</div>
+																			<div data-value="optionAddress2">г Москва, ул Мясницкая, д 12, кв. 23, 1 подъезд, 6 этаж</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="new-address">
+																	<div class="form-field">
+																		<input type="text" placeholder="Город, область, улица">
+																	</div>
+																	<div class="form-wrapper">
+																		<div class="form-field">
+																			<input type="text" placeholder="Дом">
+																		</div>
+																		<div class="form-field">
+																			<input type="text" placeholder="Корпус">
+																		</div>
+																		<div class="form-field">
+																			<input type="text" placeholder="Квартира">
+																		</div>
+																	</div>
+																	<div class="form-wrapper">
+																		<div class="form-field">
+																			<input type="text" placeholder="Подъезд">
+																		</div>
+																		<div class="form-field">
+																			<input type="text" placeholder="Этаж">
+																		</div>
+																		<div class="form-field">
+																			<input type="text" placeholder="Домофон">
+																		</div>
+																	</div>
+																</div>
+																<div class="form-wrapper">
+																	<div class="form-field">
+																		 <input type="text" id="datepicker" placeholder="Выберете дату">
+																	</div>
+																	<div class="form-field">
+																		<div class="custom-select">
+																			<div class="select-selected">Выберите время</div>
+																			<div class="select-items select-hide">
+																				<div data-value="option1">15:00 - 20:00</div>
+																				<div data-value="option2">15:00 - 20:00</div>
+																				<div data-value="option3">15:00 - 20:00</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-field">
+																	<input type="text" placeholder="Индекс">
+																</div>
+																<div class="form-field">
+																	<textarea type="text" placeholder="Комментарий к заказу"></textarea>
 																</div>
 															</div>
 														</div>
-														<div class="form-field">
-															<input type="text" placeholder="Город, область, улица">
-														</div>
-														<div class="form-wrapper">
-															<div class="form-field">
-																<input type="text" placeholder="Дом">
-															</div>
-															<div class="form-field">
-																<input type="text" placeholder="Корпус">
-															</div>
-															<div class="form-field">
-																<input type="text" placeholder="Квартира">
-															</div>
-														</div>
-														<div class="form-wrapper">
-															<div class="form-field">
-																<input type="text" placeholder="Подъезд">
-															</div>
-															<div class="form-field">
-																<input type="text" placeholder="Этаж">
-															</div>
-															<div class="form-field">
-																<input type="text" placeholder="Домофон">
+														<div class="tab" id="tab-2">
+															<div class="order__personal-form">
+																<div class="form-field">
+																	<input type="radio" name="choose-shop" id="shop-1" value="г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н" checked>
+																	<label for="shop-1">
+																		г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н
+																	</label>
+																</div>
+																<div class="form-field">
+																	<input type="radio" name="choose-shop" id="shop-2" value="г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н">
+																	<label for="shop-2">
+																		г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н
+																	</label>
+																</div>
 															</div>
 														</div>
-														<div class="form-wrapper">
-															<div class="form-field">
-																 <input type="text" id="datepicker">
-															</div>
-															<div class="form-field">
-																<select>
-																	<option value="#">15:00 - 20:00</option>
-																	<option value="#">15:00 - 20:00 1</option>
-																	<option value="#">15:00 - 20:00 2</option>
-																	<option value="#">15:00 - 20:00 3</option>
-																</select>
-															</div>
-														</div>
-														<div class="form-field">
-															<input type="text" placeholder="Индекс">
-														</div>
-														<div class="form-field">
-															<textarea type="text" placeholder="Комментарий к заказу"></textarea>
+														<div class="tab" id="tab-3">
 														</div>
 													</div>
 												</div>
-												<div class="tab" id="tab-2">
-													<div class="order__personal-form">
-														<div class="form-field">
-															<input type="radio" name="choose-shop" id="shop-1">
-															<label for="shop-1">
-																г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н
-															</label>
-														</div>
-														<div class="form-field">
-															<input type="radio" name="choose-shop" id="shop-2">
-															<label for="shop-2">
-																г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="tab" id="tab-3">
+												<div class="accordeon__more">
+													далее
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="accordion__more">
-										далее
-									</div>
-								</div>
-								<div class="accordion">
-									<div class="ac-header">
-										Личные данные <div class="extra-title"><a href="#">Войти на сайт</a>, чтобы заполнить автоматически</div>
-									</div>
-									<div class="ac-content">
-										<div class="order__personal-form">
-											<div class="form-field">
-												<input type="text" placeholder="Имя">
-											</div>
-											<div class="form-field">
-												<input type="text" placeholder="Фамилия">
-											</div>
-											<div class="form-field">
-												<input type="text" placeholder="Телефон">
+									<div class="accordeon-item">
+										<div class="accordeon-header">
+											Личные данные <div class="extra-title"><a href="#">Войти на сайт</a>, чтобы заполнить автоматически</div>
+										</div>
+										<div class="accordeon-body">
+											<div class="content-block">
+												<div class="order__personal-form content-block">
+													<div class="form-field">
+														<input type="text" placeholder="Имя">
+													</div>
+													<div class="form-field">
+														<input type="text" placeholder="Фамилия">
+													</div>
+													<div class="form-field">
+														<input type="text" placeholder="Телефон">
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="accordion">
-									<div class="ac-header">
-										Способ оплаты
-									</div>
-									<div class="ac-content">
-										<div class="order__personal-form">
-											<div class="form-field">
-												<input type="radio" name="pay-shop" id="pay-1">
-												<label for="pay-1">
-													Картой онлайн, Apple Pay, Google Pay
-												</label>
+									<div class="accordeon-item">
+										<div class="accordeon-header">
+											Способ оплаты
+										</div>
+										<div class="accordeon-body">
+											<div class="content-block">
+												<div class="order__personal-form">
+													<div class="form-field">
+														<input type="radio" name="pay-shop" id="pay-1" checked>
+														<label for="pay-1">
+															Картой онлайн, Apple Pay, Google Pay
+														</label>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1023,7 +1033,7 @@
 									</div>
 								</div>
 								<div class="order__total-button">
-									<button class="btn btn-primary wide" type="submit"><span>Оформить заказ</span></button>
+									<button class="btn btn-primary wide" type="submit" data-modal-opener="sendorder-modal"><span>Оформить заказ</span></button>
 								</div>
 								<div class="order__total-policy">
 									Нажимая кнопку, Вы соглашаетесь с <a href="#">условиями оферты</a>, <a href="#">программы лояльности</a> и <a href="#">политикой конфиденциальности</a>
@@ -1185,9 +1195,27 @@
 				</div>
 			</div>
 		</div>
-		<script src="./assets/js/jquery-3.7.1.js"></script>
-		<script src="./assets/js/jquery-ui.js"></script>
-		<script src="./assets/js/scripts.js"></script>
+		<div class="modal sendorder-modal" id="sendorder-modal">
+			<div class="modal-wrapper">
+				<button class="modal-closer main-btn" aria-label="Закрыть">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.456 1.48528L1.48542 18.4558M1.48542 1.48528L18.456 18.4558" stroke="#35383A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				<div class="modal-content">
+					<div class="send-order__title">
+						Благодарим, что выбрали нас! Ваш заказ успешно оформлен
+					</div>
+					<div class="send-order__text">
+						На указанную вами почту отправлено письмо, подтверждающее, что мы получили ваш заказ и он находится в обработке.
+					</div>
+					<div class="send-order__button">
+						<a href="/" class="btn btn-primary wide"><span>Вернуться на главную</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/js/datepicker.min.js"></script>
 		<script src="./assets/main.js"></script>
 	</body>
 </html>

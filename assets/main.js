@@ -6144,33 +6144,90 @@ window.addEventListener("resize", () => {
   setSiteOffset();
 });
 
-const selectSingle = document.querySelector('.__select');
-const selectSingle_title = selectSingle.querySelector('.__select__title');
-const selectSingle_labels = selectSingle.querySelectorAll('.__select__label');
+const picker = datepicker('#datepicker', {
+	customMonths: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+	"Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+	customDays: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
+	weekHeader: "Нед",
+	formatter: (input, date, instance) => {
+		const value = date.toLocaleDateString()
+		input.value = value
+	},
+})
 
-// Toggle menu
-selectSingle_title.addEventListener('click', () => {
-  if ('active' === selectSingle.getAttribute('data-state')) {
-    selectSingle.setAttribute('data-state', '');
-  } else {
-    selectSingle.setAttribute('data-state', 'active');
-  }
+const tabsNavItems = document.querySelectorAll('.tabs-nav__item');
+
+tabsNavItems.forEach(function(item) {
+	item.addEventListener('click', function() {
+		let tabId = this.getAttribute('data-tab');
+		tabsNavItems.forEach(function(navItem) {
+			navItem.classList.remove('active');
+		});
+		this.classList.add('active');
+
+		const tabsContent = document.querySelectorAll('.tabs-content .tab');
+		tabsContent.forEach(function(tab) {
+			tab.classList.remove('active');
+			
+			let activeTab = document.getElementById(tabId);
+			if (activeTab) {
+				activeTab.classList.add('active');
+			}
+		});
+		
+	});
 });
 
-// Close when click to option
-for (let i = 0; i < selectSingle_labels.length; i++) {
-  selectSingle_labels[i].addEventListener('click', (evt) => {
-    selectSingle_title.textContent = evt.target.textContent;
-    selectSingle.setAttribute('data-state', '');
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const customSelects = document.querySelectorAll('.custom-select');
 
-$(document).ready(function(){
-  $('.tabs-nav__item').on('click', function(event) {   
-    console.log($(this).attr('data-tab'));     
-    $(this).parents('.tabs').find('.tabs-nav__item').removeClass('active');
-    $(this).addClass('active');
-    $('.tabs-content').find('.tab').removeClass('active');
-    $('#'+$(this).attr('data-tab')).addClass('active');        
-  });
+    customSelects.forEach(select => {
+        const selected = select.querySelector('.select-selected');
+        const itemsContainer = select.querySelector('.select-items');
+
+        selected.addEventListener('click', function() {
+            customSelects.forEach(s => {
+                if (s !== select) {
+                    s.querySelector('.select-items').classList.add('select-hide');
+                }
+            });
+            itemsContainer.classList.toggle('select-hide');
+        });
+
+        itemsContainer.querySelectorAll('div').forEach(item => {
+            item.addEventListener('click', function() {
+                selected.textContent = this.textContent;
+                selected.setAttribute('data-value', this.getAttribute('data-value'));
+				console.log(selected.getAttribute('data-value'));
+				if(selected.getAttribute('data-type') == 'address') {
+					if((selected.getAttribute('data-value') != 'newAddress')) {
+						document.querySelector('.new-address').classList.add('hidden');
+					} else {
+						document.querySelector('.new-address').classList.remove('hidden');
+					}
+				}
+                itemsContainer.classList.add('select-hide');
+            });
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-select')) {
+            customSelects.forEach(select => {
+                select.querySelector('.select-items').classList.add('select-hide');
+            });
+        }
+    });
+	
+	const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+	radioButtons.forEach(radio => {
+		radio.addEventListener('click', function() {
+			console.log('test')
+			radioButtons.forEach(rb => {
+				rb.checked = false;
+			});
+			this.checked = true;
+		});
+	});
 });
