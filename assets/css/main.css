@@ -933,6 +933,14 @@ body:has(.top-menu:focus) main {
 	transition: transform var(--main-transition), fill var(--main-transition), -webkit-transform var(--main-transition);
 }
 
+.btn-thin svg {
+	fill: var(--primary);
+	-webkit-transition: fill var(--main-transition), -webkit-transform var(--main-transition);
+	transition: fill var(--main-transition), -webkit-transform var(--main-transition);
+	transition: transform var(--main-transition), fill var(--main-transition);
+	transition: transform var(--main-transition), fill var(--main-transition), -webkit-transform var(--main-transition);
+}
+
 .btn-light:not(.disabled):not(.filter-opener-btn):not(.filter-row-btn):not(.catalog-detail-back-btn):not(.store-locator__tab):focus {
 	background-color: var(--hover-dop-color);
 	color: var(--hover-color);
