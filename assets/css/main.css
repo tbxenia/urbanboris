@@ -6788,9 +6788,9 @@ button.swiper-pagination-bullet {
 
 .selection__item-link {
 	position: absolute;
-    bottom: 0;
+    bottom: 40px;
     left: 50%;
-    padding: 0 20px 40px;
+    padding: 0 20px 0;
     transform: translateX(-50%);
 }
 
@@ -6803,7 +6803,7 @@ button.swiper-pagination-bullet {
 }
 
 @media (hover: hover) {
-    .selection__item-link:hover svg {
+    .selection__item-link a:hover svg {
         fill: var(--hover-color);
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -6853,7 +6853,7 @@ button.swiper-pagination-bullet {
 
 @media(max-width: 576px) {
 	.selection__item-link {
-		padding: 0 0 40px 0;
+		padding: 0;
 	}
 	
 	.selection__item-link {
