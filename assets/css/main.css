@@ -6624,6 +6624,16 @@ button.swiper-pagination-bullet {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	padding: 10px;
+	background: rgba(249, 249, 249, 0.8);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+}
+
+@media(max-width: 1199px) {
+	.sticky-button {
+		display: block;
+	}
 }
 
 @media(max-width: 576px) {
@@ -6646,10 +6656,6 @@ button.swiper-pagination-bullet {
 	.order__personal-form .form-field input[type="tel"],
 	.order__personal-form .form-field textarea {
 		font-size: 14px;
-	}
-	
-	.sticky-button {
-		display: block;
 	}
 	
 	.order__tabs .order__tabs-title {
