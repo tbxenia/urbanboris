@@ -6700,3 +6700,148 @@ button.swiper-pagination-bullet {
 .cart__order .accordeon .accordeon__final .accordeon-header .extra-title {
     font-size: 12px;
 }
+
+/* selection */
+
+.selection {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1px;
+	row-gap: 40px;
+	justify-content: center;
+}
+
+.selection__item {
+	width: calc(1/2*100% - (1 - 1/2)*1px);
+	position: relative;
+}
+
+.selection__item {
+	width: calc(1/2*100% - (1 - 1/2)*1px);
+	position: relative;
+}
+
+.selection__item--big {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.selection__item-img,
+.selection__info {
+	width: calc(1/2*100% - (1 - 1/2)*1px);
+}
+
+.selection__item-img {
+    overflow: hidden;
+    width: 100%;
+}
+
+.selection__item--big .selection__item-img {
+	max-width: 50%;
+}
+
+.selection__item-img img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.selection__info {
+	padding: 0 130px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.selection__info-name {
+	font-weight: 700;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+.selection__info-text {
+	font-size: 16px;
+	text-align: justify;
+}
+
+.selection__item-link {
+	position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0 20px 40px;
+    transform: translateX(-50%);
+}
+
+.selection__item-link .btn {
+	font-size: 24px;
+}
+
+.selection__item-link .btn.white {
+	color: #fff;
+}
+
+@media (hover: hover) {
+    .selection__item-link:hover svg {
+        fill: var(--hover-color);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+
+@media(max-width: 1199px) {
+	.selection__item--big {
+		align-items: flex-start;
+	}
+	
+	.selection__info {
+		padding: 0 40px;
+	}
+}
+
+@media(max-width: 991px) {
+	.selection {
+		flex-direction: column;
+		gap: 1px;
+	}
+	
+	.selection__item--big {
+		flex-direction: column;
+		gap: 0;
+	}
+	
+	.selection__item--big .selection__item-img {
+		max-width: 100%;
+	}
+	
+	.selection__item-img,
+	.selection__info,
+	.selection__item	{
+		width: 100%;
+	}
+	
+	.selection__info {
+		padding: 20px;
+	}
+	
+	.selection__item-img {
+		height: 450px;
+	}
+}
+
+@media(max-width: 576px) {
+	.selection__item-link {
+		padding: 0 0 40px 0;
+	}
+	
+	.selection__item-link {
+		width: 100%;
+		text-align: center;
+	}
+	
+	.selection__item-link .btn {
+		margin: 0 auto;
+	}
+}
