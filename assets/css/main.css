@@ -875,6 +875,10 @@ body:has(.top-menu:focus) main {
 	fill: var(--primary);
 }
 
+.btn-thin.white svg {
+	fill: var(--white);
+}
+
 .btn-thin:not(.disabled):focus {
 	color: #606b80;
 }
@@ -2074,12 +2078,20 @@ html:has(.modal.active) {
 		fill: #606b80;
 	}
 
+	.btn-thin.white:hover svg {
+		fill: #606b80;
+	}
+
 	.btn-thin.underlined:hover {
 		color: #606b80;
 	}
 
 	.btn-thin.underlined:hover svg {
 		fill: #606b80;
+	}
+	
+	.btn-thin.underlined.white:hover svg {
+		fill: #fff;
 	}
 
 	.btn-thin.underlined-hover:hover {
