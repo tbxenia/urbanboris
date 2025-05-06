@@ -6231,3 +6231,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 });
+
+window.addEventListener('scroll', function() {
+	const buttonOrder = document.querySelector('.order__total-button');
+	const buttonOrderPosition = buttonOrder.getBoundingClientRect().top;
+	const windowHeight = window.innerHeight;
+
+	if (buttonOrderPosition < windowHeight) {
+		document.querySelector('.sticky-button').classList.add('hidden');
+	} else {
+		document.querySelector('.sticky-button').classList.remove('hidden');
+	}
+});
