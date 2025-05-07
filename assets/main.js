@@ -6144,16 +6144,18 @@ window.addEventListener("resize", () => {
   setSiteOffset();
 });
 
-const picker = datepicker('#datepicker', {
-	customMonths: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
-	"Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
-	customDays: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
-	weekHeader: "Нед",
-	formatter: (input, date, instance) => {
-		const value = date.toLocaleDateString()
-		input.value = value
-	},
-})
+if(document.getElementById('datepicker')) {
+	const picker = datepicker('#datepicker', {
+		customMonths: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+		"Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+		customDays: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
+		weekHeader: "Нед",
+		formatter: (input, date, instance) => {
+			const value = date.toLocaleDateString()
+			input.value = value
+		},
+	})
+}
 
 const tabsNavItems = document.querySelectorAll('.tabs-nav__item');
 
@@ -6233,8 +6235,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('scroll', function() {
-	const buttonOrder = document.querySelector('.order__total-button');
+	const buttonOrder = document.querySelector('.order');
 	const buttonOrderPosition = buttonOrder.getBoundingClientRect().top;
+	console.log(buttonOrderPosition);
 	const windowHeight = window.innerHeight;
 
 	if (buttonOrderPosition < windowHeight) {

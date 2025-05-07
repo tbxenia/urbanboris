@@ -5314,6 +5314,14 @@ body.body-locked .search-title__wrapper {
 		align-items: center;
 		text-align: center;
 	}
+	
+	.catalog-detail__field--add-btn {
+		display: none;
+	}
+	
+	.sticky-button__static.hidden {
+		display: block!important;
+	}
 }
 
 @media (max-width: 480px) {
@@ -6648,6 +6656,7 @@ button.swiper-pagination-bullet {
 	background: rgba(249, 249, 249, 0.8);
 	-webkit-backdrop-filter: blur(2px);
 	backdrop-filter: blur(2px);
+	z-index: 9;
 }
 
 @media(max-width: 1199px) {
