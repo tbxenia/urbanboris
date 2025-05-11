@@ -1327,6 +1327,10 @@ body:has(.top-menu:focus) main {
 	transform: rotate(-45deg) translateY(1px);
 }
 
+.base-slider.auto-fill-slider .swiper-slide .base-card__title.white svg {
+	fill: var(--white);
+}
+
 .base-slider.auto-fill-slider .swiper-slide .base-card:hover .base-card__title svg,
 .base-slider.auto-fill-slider .swiper-slide .base-card:focus .base-card__title svg {
 	-webkit-transform: rotate(0) translateY(0);
