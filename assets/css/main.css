@@ -3697,7 +3697,7 @@ body:has(.burger.active) {
 
 .filter-wrapper.active {
 	visibility: visible;
-	z-index: 103;
+	z-index: 999;
 	opacity: 1;
 }
 
