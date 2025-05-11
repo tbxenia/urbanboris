@@ -6232,17 +6232,28 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.checked = true;
 		});
 	});
+	
+	const selectionListButton = document.querySelectorAll('.show-products');
+	
+	selectionListButton.forEach(elem => {
+		elem.addEventListener('click', function() {
+			const parentDiv = elem.parentNode;
+			parentDiv.querySelector('.selection-detail__products').classList.toggle('active');
+		});
+	});
 });
 
 window.addEventListener('scroll', function() {
 	const buttonOrder = document.querySelector('.order');
-	const buttonOrderPosition = buttonOrder.getBoundingClientRect().top;
-	console.log(buttonOrderPosition);
-	const windowHeight = window.innerHeight;
+	if(buttonOrder) {
+		const buttonOrderPosition = buttonOrder.getBoundingClientRect().top;
+		console.log(buttonOrderPosition);
+		const windowHeight = window.innerHeight;
 
-	if (buttonOrderPosition < windowHeight) {
-		document.querySelector('.sticky-button').classList.add('hidden');
-	} else {
-		document.querySelector('.sticky-button').classList.remove('hidden');
+		if (buttonOrderPosition < windowHeight) {
+			document.querySelector('.sticky-button').classList.add('hidden');
+		} else {
+			document.querySelector('.sticky-button').classList.remove('hidden');
+		}
 	}
 });
