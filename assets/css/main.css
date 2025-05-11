@@ -3289,17 +3289,19 @@ body:has(.burger.active) {
 	content: "";
 	-webkit-transition: background-color var(--main-transition);
 	transition: background-color var(--main-transition);
-}
-
-.top-menu:hover .top-menu-opener,
-.top-menu:focus .top-menu-opener {
-	color: var(--hover-color);
-	background-color: var(--light);
+	-webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+	-webkit-transition: 0.25s linear;
+    transition: 0.25s linear;
 }
 
 .top-menu:hover .top-menu-opener::before,
 .top-menu:focus .top-menu-opener::before {
 	background-color: var(--hover-color);
+	-webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .top-menu:hover .top-menu__grid,
