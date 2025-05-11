@@ -6652,11 +6652,14 @@ button.swiper-pagination-bullet {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 10px;
-	background: rgba(249, 249, 249, 0.8);
 	-webkit-backdrop-filter: blur(2px);
 	backdrop-filter: blur(2px);
 	z-index: 9;
+}
+
+.sticky-button .btn {
+	min-height: 45px;
+	padding: 10px;
 }
 
 @media(max-width: 1199px) {
