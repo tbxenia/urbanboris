@@ -4010,8 +4010,9 @@ body:has(.burger.active) {
 
 .size-table table thead td:first-child,
 .size-table table tbody td:first-child {
-	padding: 22px 20px;
+	padding: 22px 12px;
 	white-space: nowrap;
+	word-wrap: break-word;
 }
 
 @media(max-width: 991px) {
@@ -5984,6 +5985,10 @@ button.swiper-pagination-bullet {
 	margin-bottom: 20px;
 }
 
+.inner-section__content-text {
+	width: 100%;
+}
+
 .inner-section__content-img {
 	margin: -90px -40px 0 0;
 }
@@ -7067,4 +7072,14 @@ button.swiper-pagination-bullet {
 #size-selectionlist .modal-header {
     padding: 0;
     min-height: 0;
+}
+
+@container main (min-width: 480px) {
+	.content-block .size-table table {
+		width: 100%;
+	}
+	
+	.content-block > :last-child {
+	  overflow-x: scroll;
+	}
 }
