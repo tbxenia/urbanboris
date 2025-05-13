@@ -802,7 +802,11 @@
 		<section class="section selection-detail">
 			<div class="selection-detail__item selection-detail__item--big">
 				<div class="selection-detail__item-img">
-					<img src="./assets/img/selectiondetail1.png" alt="Подборка 1">
+					<picture>
+						<source media="(max-width: 1000px)" srcset="./assets/img/selectiondetail1-mobile.png" />
+						<source media="(min-width: 1001px)" srcset="./assets/img/selectiondetail1.png" />
+						<img src="./assets/img/selectiondetail1.png" alt="Подборка 1" />
+					</picture>
 					<div class="selection-detail__products">
 						<div class="selection-detail__products-item">
 							<div class="selection-detail__products-img">
