@@ -7142,3 +7142,21 @@ button.swiper-pagination-bullet {
 		max-width: 100%;
 	}
 }
+
+.btn-cart.active svg>path:first-child {
+	fill: #B6B6B6;
+}
+
+.btn-cart.active {
+	position: relative;
+}
+
+.btn-cart.active span {
+	font-weight: 700;
+	font-size: 8px;
+	color: var(--primary);
+	position: absolute;
+	bottom: 22px;
+	left: 50%;
+	transform: translateX(-50%);
+}
