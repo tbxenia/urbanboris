@@ -2245,7 +2245,7 @@ html:has(.modal.active) {
 .filter__header,
 .filter__footer,
 .range-top,
-.breadcrumbs .container,
+.breadcrumbs,
 .top-menu__list li a,
 .top-multilevel-menu__main-list a,
 .subscribe form fieldset,
@@ -2258,6 +2258,11 @@ html:has(.modal.active) {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+.breadcrumbs {
+	flex-wrap: wrap;
+	row-gap: 5px;
 }
 
 .cart-item__price {
