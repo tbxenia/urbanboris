@@ -7083,3 +7083,57 @@ button.swiper-pagination-bullet {
 	  overflow-x: scroll;
 	}
 }
+
+.promocode {
+	display: none;
+}
+
+.promocode.show {
+	display: flex;
+	gap: 0;
+}
+
+.promocode .promocode__field {
+	width: 100%;
+}
+
+.promocode .promocode__field input[type="text"] {
+	background: var(--white);
+	padding: 30px 20px 12px;
+	font-size: 16px;
+	color: var(--primary);
+	width: 100%;
+	display: block;
+	border: 0;
+}
+
+.promocode .promocode__field input[type="text"]:focus {
+	outline: none;
+}
+
+.promocode .promocode__field {
+	position: relative;
+}
+
+.promocode .promocode__field label {
+	position: absolute;
+	top: 11px;
+	left: 20px;
+	font-size: 14px;
+	color: var(--gray);
+}
+
+.promocode button.btn-primary.wide {
+	max-width: 130px;
+	width: 100%;
+}
+
+@media(max-width: 576px) {
+	.promocode.show {
+		flex-direction: column;
+	}
+	
+	.promocode button.btn-primary.wide {
+		max-width: 100%;
+	}
+}

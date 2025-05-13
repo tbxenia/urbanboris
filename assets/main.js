@@ -5970,7 +5970,9 @@ if (items.length) {
 const opener = document.querySelector(".promo-field-opener");
 if (opener) {
   const onClickOpenPromoField = () => {
-    console.log("onClickOpenPromoField");
+    opener.parentElement.classList.add("hidden");
+	document.querySelector(".promocode").classList.add("show");
+	document.getElementById("promocode").focus();
   };
   opener.addEventListener("click", onClickOpenPromoField);
 }
@@ -6240,6 +6242,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			const parentDiv = elem.parentNode;
 			parentDiv.querySelector('.selection-detail__products').classList.toggle('active');
 		});
+	});
+	
+	/* promocode */
+	
+	const buttonPromoEnter = document.querySelector('.promo-field-opener');
+	buttonPromoEnter.addEventListener('click', function() {
+		console.log('test')
 	});
 });
 
