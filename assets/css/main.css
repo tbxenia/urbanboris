@@ -5964,7 +5964,7 @@ button.swiper-pagination-bullet {
 
 /* Статичные страницы, доставка и оплата */
 
-.inner-section__content {
+.inner-section:not(.shops) .inner-section__content {
 	display: flex;
 	gap: 40px;
 	justify-content: space-between;
