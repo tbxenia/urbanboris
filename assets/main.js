@@ -6190,6 +6190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const itemsContainer = select.querySelector('.select-items');
 
         selected.addEventListener('click', function() {
+			selected.classList.add('active');
             customSelects.forEach(s => {
                 if (s !== select) {
                     s.querySelector('.select-items').classList.add('select-hide');
@@ -6203,6 +6204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selected.textContent = this.textContent;
                 selected.setAttribute('data-value', this.getAttribute('data-value'));
 				console.log(selected.getAttribute('data-value'));
+				selected.classList.remove('active');
 				if(selected.getAttribute('data-type') == 'address') {
 					if((selected.getAttribute('data-value') != 'newAddress')) {
 						document.querySelector('.new-address').classList.add('hidden');
@@ -6213,14 +6215,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 itemsContainer.classList.add('select-hide');
             });
         });
-    });
-
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.custom-select')) {
-            customSelects.forEach(select => {
-                select.querySelector('.select-items').classList.add('select-hide');
-            });
-        }
     });
 	
 	const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -6266,3 +6260,56 @@ window.addEventListener('scroll', function() {
 		}
 	}
 });
+
+const delayedLoadingFile = (type, path, ...callback) => {
+	const tag = MAPFILES.get(type)[0];
+	const src = MAPFILES.get(type)[1];
+	const file = document.createElement(tag);
+
+	//Если файл уже есть, нам не надо его
+	const isExistingFile = document.querySelector(`[${src}="${path}"]`);
+	if (isExistingFile) {
+		callback.forEach((cb) => {
+			if (typeof cb !== "function") return;
+			setTimeout(() => {
+				cb();
+			}, 300);
+		});
+		return;
+	}
+
+	file.rel = type;
+	file[src] = path;
+	document.head.insertBefore(
+		file,
+		document.head.childNodes[document.head.childNodes.length - 1].nextSibling,
+	);
+
+	file.onload = () => {
+		console.log(`File ${path} loaded`);
+		callback.forEach((cb) => {
+			if (typeof cb !== "function") return;
+			setTimeout(() => {
+				cb();
+			}, 300);
+		});
+	};
+};
+
+//Маски для телефона
+//отложенно грузим библиотеку маск
+const loadInputmask = () => {
+	delayedLoadingFile("script", pathTo + "/js/inputmask.min.js", setMasks);
+};
+
+const phoneInputs = document.querySelectorAll('input[autocomplete="tel"]');
+phoneInputs.forEach((input) => {
+	input.addEventListener("click", loadInputmask, { once: true });
+});
+
+//навешиваем маски
+const setMasks = () => {
+	phoneInputs.forEach((input) => {
+		Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
+	});
+};
