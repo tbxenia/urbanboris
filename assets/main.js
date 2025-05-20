@@ -6241,9 +6241,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	/* promocode */
 	
 	const buttonPromoEnter = document.querySelector('.promo-field-opener');
-	buttonPromoEnter.addEventListener('click', function() {
-		console.log('test')
-	});
+	if(buttonPromoEnter) {
+		buttonPromoEnter.addEventListener('click', function() {
+			console.log('test')
+		});
+	}
 });
 
 window.addEventListener('scroll', function() {
@@ -6295,21 +6297,9 @@ const delayedLoadingFile = (type, path, ...callback) => {
 		});
 	};
 };
-
-//Маски для телефона
-//отложенно грузим библиотеку маск
-const loadInputmask = () => {
-	delayedLoadingFile("script", pathTo + "/js/inputmask.min.js", setMasks);
-};
-
 const phoneInputs = document.querySelectorAll('input[autocomplete="tel"]');
-phoneInputs.forEach((input) => {
-	input.addEventListener("click", loadInputmask, { once: true });
-});
 
-//навешиваем маски
-const setMasks = () => {
-	phoneInputs.forEach((input) => {
-		Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
-	});
-};
+
+phoneInputs.forEach((input) => {
+	Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
+});
