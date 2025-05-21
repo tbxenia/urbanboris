@@ -6303,3 +6303,24 @@ const phoneInputs = document.querySelectorAll('input[autocomplete="tel"]');
 phoneInputs.forEach((input) => {
 	Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
 });
+
+const searchInput = document.getElementById("search");
+const searchResult = document.getElementById("search-result__products");
+
+searchInput.addEventListener("change", () => { console.log('Change');
+		
+			
+			fetch('./template-parts/catalog-list.html')
+				.then(response => {
+					return response.text();
+				})
+				.then(data => {
+					searchResult.innerHTML = data;
+				})
+				.catch((error) => {
+					console.log('ошибка');
+				});	
+			
+		
+	
+});
