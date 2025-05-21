@@ -6306,9 +6306,10 @@ phoneInputs.forEach((input) => {
 
 const searchInput = document.getElementById("search");
 const searchResult = document.getElementById("search-result__products");
+const searchCategory = document.querySelector('search-category');
 
-searchInput.addEventListener("change", () => { console.log('Change');	
-	fetch('./template-parts/catalog-list.html')
+searchInput.addEventListener("keyup", () => {
+	fetch('./template-parts/search-category-list.html')
 		.then(response => {
 			return response.text();
 		})
@@ -6316,6 +6317,19 @@ searchInput.addEventListener("change", () => { console.log('Change');
 			searchResult.innerHTML = data;
 		})
 		.catch((error) => {
-			console.log('ошибка');
-		});	
+			console.log('Ошибка загрузки файла');
+		});
+
+	searchCategory.classList.remove('hidden');
+
+	fetch('./template-parts/catalog-list.html')
+		.then(response => {
+			return response.text();
+		})
+		.then(data => {
+			searchCategory.append(data);
+		})
+		.catch((error) => {
+			console.log('Ошибка загрузки файла');
+		});
 });
