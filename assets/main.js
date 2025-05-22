@@ -6308,7 +6308,10 @@ const searchInput = document.getElementById("search");
 const searchResult = document.getElementById("search-result__products");
 const searchCategory = document.querySelector('search-category');
 
-searchInput.addEventListener("keyup", () => {
+const suggestionsList = document.getElementById('search-title__result-list');
+const suggestions = ["футболка", "футболка из хлопка", "футболка из хлопка с короткими рукавами"];
+
+searchInput.addEventListener('input', function() {
 	fetch('./template-parts/search-category-list.html')
 		.then(response => {
 			return response.text();
@@ -6320,9 +6323,10 @@ searchInput.addEventListener("keyup", () => {
 			console.log('Ошибка загрузки файла');
 		});
 
+	suggestionsList.innerHTML = '';
 	searchCategory.classList.remove('hidden');
 
-	fetch('./template-parts/catalog-list.html')
+	fetch('./template-parts/search-product-list.html')
 		.then(response => {
 			return response.text();
 		})
@@ -6332,4 +6336,31 @@ searchInput.addEventListener("keyup", () => {
 		.catch((error) => {
 			console.log('Ошибка загрузки файла');
 		});
+});
+
+searchInput.addEventListener('input', function() {
+	const value = this.value;
+	suggestionsList.innerHTML = '';
+	if (value) {
+		const filteredSuggestions = suggestions.filter(suggestion => 
+			suggestion.toLowerCase().startsWith(value.toLowerCase())
+		);
+		filteredSuggestions.forEach(suggestion => {
+			const li = document.createElement('li');
+			li.textContent = suggestion;
+			li.addEventListener('click', () => {
+				input.value = suggestion;
+				suggestionsList.innerHTML = '';
+				suggestionsList.style.display = 'none';
+			});
+			suggestionsList.appendChild(li);
+		});
+		if (filteredSuggestions.length > 0) {
+			suggestionsList.style.display = 'block';
+		} else {
+			suggestionsList.style.display = 'none';
+		}
+	} else {
+		suggestionsList.style.display = 'none';
+	}
 });
