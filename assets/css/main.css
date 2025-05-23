@@ -6800,6 +6800,10 @@ button.swiper-pagination-bullet {
 		gap: 2px;
 	}
 	
+	.form-wrapper.date-time {
+		flex-direction: column;
+	}
+	
 	.sticky-button .btn {
 		font-size: 12px;
 	}
