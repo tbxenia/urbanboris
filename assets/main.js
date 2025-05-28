@@ -2160,6 +2160,7 @@ function slideToClosest(speed, runCallbacks, internal, threshold) {
   return swiper.slideTo(index, speed, runCallbacks, internal);
 }
 function slideToClickedSlide() {
+	console.log('test111');
   const swiper = this;
   if (swiper.destroyed) return;
   const {
@@ -3532,7 +3533,7 @@ var defaults = {
   // Clicks
   preventClicks: true,
   preventClicksPropagation: true,
-  slideToClickedSlide: false,
+  slideToClickedSlide: true,
   // loop
   loop: false,
   loopAddBlankSlides: true,
@@ -4252,12 +4253,14 @@ function Navigation(_ref) {
     toggleEl(nextEl, swiper.isEnd && !swiper.params.rewind);
   }
   function onPrevClick(e) {
+	  console.log('test');
     e.preventDefault();
     if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
     swiper.slidePrev();
     emit("navigationPrev");
   }
   function onNextClick(e) {
+	  console.log('test2');
     e.preventDefault();
     if (swiper.isEnd && !swiper.params.loop && !swiper.params.rewind) return;
     swiper.slideNext();
@@ -4463,6 +4466,7 @@ function Pagination(_ref) {
       return;
     }
     e.preventDefault();
+	//console.log('111')
     const index = elementIndex(bulletEl) * swiper.params.slidesPerGroup;
     if (swiper.params.loop) {
       if (swiper.realIndex === index) return;
@@ -6312,7 +6316,7 @@ const suggestionsList = document.getElementById('search-title__result-list');
 const suggestions = ["футболка", "футболка из хлопка", "футболка из хлопка с короткими рукавами"];
 
 searchInput.addEventListener('input', function() {
-	fetch('./template-parts/search-category-list.html')
+	fetch('./template-parts/search-product-list.html')
 		.then(response => {
 			return response.text();
 		})
@@ -6326,7 +6330,7 @@ searchInput.addEventListener('input', function() {
 	suggestionsList.innerHTML = '';
 	searchCategory.classList.remove('hidden');
 
-	fetch('./template-parts/search-product-list.html')
+	fetch('./template-parts/search-category-list.html')
 		.then(response => {
 			return response.text();
 		})
