@@ -6336,7 +6336,7 @@ searchInput.addEventListener('input', function() {
 			return response.text();
 		})
 		.then(data => {
-			searchCategory.innerHTML(data);
+			searchCategory.innerHTML = data;
 		})
 		.catch((error) => {
 			console.log('Ошибка загрузки файла');
