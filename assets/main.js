@@ -6310,8 +6310,7 @@ phoneInputs.forEach((input) => {
 
 const searchInput = document.getElementById("search");
 const searchResult = document.getElementById("search-result__products");
-const searchCategory = document.querySelector('search-category');
-const searchCategoryWrapper = document.querySelector('search-title__result');
+const searchCategory = document.querySelector('.search-category');
 
 const suggestionsList = document.getElementById('search-title__result-list');
 const suggestions = ["футболка", "футболка из хлопка", "футболка из хлопка с короткими рукавами"];
@@ -6329,8 +6328,8 @@ searchInput.addEventListener('input', function() {
 		});
 
 	suggestionsList.innerHTML = '';
-	document.querySelector('search-title__category').classList.remove('hidden');
-	document.querySelector('search-title__list').classList.remove('hidden');
+	document.querySelector('.search-title__category').classList.remove('hidden');
+	document.querySelector('.search-title__list').classList.remove('hidden');
 
 	fetch('./template-parts/search-category-list.html')
 		.then(response => {
