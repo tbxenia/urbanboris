@@ -6329,8 +6329,8 @@ searchInput.addEventListener('input', function() {
 		});
 
 	suggestionsList.innerHTML = '';
-	searchCategory.classList.remove('hidden');
-	searchCategoryWrapper.classList.remove('hidden');
+	document.querySelector('search-title__category').classList.remove('hidden');
+	document.querySelector('search-title__list').classList.remove('hidden');
 
 	fetch('./template-parts/search-category-list.html')
 		.then(response => {
