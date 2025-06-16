@@ -795,6 +795,7 @@
 				<div class="breadcrumbs__item"><span>/&nbsp;все товары</span></div>
 			</div>
 		</div>
+		
 		<section class="base-section catalog-section">
 			<div class="container">
 				<div class="base-section__header">
@@ -1759,19 +1760,21 @@
 					<span class="base-subtitle filter__field-title">цена, ₽</span>
 					<div class="filter__field-content">
 						<div class="range">
-							<div class="range-top">
-								<label class="range-input">
-								<input type="text" placeholder="1990">
-								</label>
-								<label class="range-input">
-								<input type="text" placeholder="105 269">
-								</label>
+							<div class="price-input-container">
+								<div class="range-top price-input">
+
+										<input type="number" class="min-input" value="2500">
+
+										<input type="number" class="max-input" value="8500">
+							
+								</div>
+								<div class="slider">
+									<div class="price-slider"></div>
+								</div>
 							</div>
-							<div class="range-slider">
-								<div class="range-slider__track-inner bx_ui_slider_pricebar_V"></div>
-								<div class="range-slider__track"></div>
-								<button type="button" class="range-slider__handle range-slider__handle--left"></button>
-								<button type="button" class="range-slider__handle range-slider__handle--right"></button>
+							<div class="range-input">
+								<input type="range" class="min-range" min="2500" max="8500" value="2500" step="1">
+								<input type="range" class="max-range" min="2500" max="8500" value="8500" step="1">
 							</div>
 						</div>
 					</div>
@@ -1829,6 +1832,10 @@
 			</div>
 		</form>
 	</div>
+	
 	<script src="./assets/main.js"></script>
+	
+
+    
 </body>
 </html>

@@ -6250,13 +6250,153 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log('test')
 		});
 	}
+	
+	
+	const rangevalue = document.querySelector(".slider .price-slider");
+	const rangeInputvalue = document.querySelectorAll(".range-input input");
+
+	// Set the price gap
+	let priceGap = 500;
+
+	// Adding event listeners to price input elements
+	const priceInputvalue = document.querySelectorAll(".price-input input");
+	for (let i = 0; i < priceInputvalue.length; i++) {
+		priceInputvalue[i].addEventListener("input", e => {
+
+			// Parse min and max values of the range input
+			let minp = parseInt(priceInputvalue[0].value);
+			let maxp = parseInt(priceInputvalue[1].value);
+			let diff = maxp - minp
+
+			if (minp < 0) {
+				alert("minimum price cannot be less than 0");
+				priceInputvalue[0].value = 0;
+				minp = 0;
+			}
+
+			// Validate the input values
+			if (maxp > 10000) {
+				alert("maximum price cannot be greater than 10000");
+				priceInputvalue[1].value = 10000;
+				maxp = 10000;
+			}
+
+			if (minp > maxp - priceGap) {
+				priceInputvalue[0].value = maxp - priceGap;
+				minp = maxp - priceGap;
+
+				if (minp < 0) {
+					priceInputvalue[0].value = 0;
+					minp = 0;
+				}
+			}
+
+			// Check if the price gap is met and max price is within the range
+			if (diff >= priceGap && maxp <= rangeInputvalue[1].max) {
+				if (e.target.className === "min-input") {
+					rangeInputvalue[0].value = minp;
+					let value1 = rangeInputvalue[0].max;
+					rangevalue.style.left = `${(minp / value1) * 100}%`;
+				}
+				else {
+					rangeInputvalue[1].value = maxp;
+					let value2 = rangeInputvalue[1].max;
+					rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
+				}
+			}
+		});
+
+		// Add event listeners to range input elements
+		for (let i = 0; i < rangeInputvalue.length; i++) {
+			rangeInputvalue[i].addEventListener("input", e => {
+				let minVal = parseInt(rangeInputvalue[0].value);
+				let maxVal = parseInt(rangeInputvalue[1].value);
+
+				let diff = maxVal - minVal
+				
+				// Check if the price gap is exceeded
+				if (diff < priceGap) {
+				
+					// Check if the input is the min range input
+					if (e.target.className === "min-range") {
+						rangeInputvalue[0].value = maxVal - priceGap;
+					}
+					else {
+						rangeInputvalue[1].value = minVal + priceGap;
+					}
+				}
+				else {
+				
+					// Update price inputs and range progress
+					priceInputvalue[0].value = minVal;
+					priceInputvalue[1].value = maxVal;
+					console.log(minVal);
+					console.log(rangeInputvalue[0].max);
+					rangevalue.style.left = `${(minVal / rangeInputvalue[0].max) * 100}%`;
+					rangevalue.style.right = `${100 - (maxVal / rangeInputvalue[1].max) * 100}%`;
+				}
+			});
+		}
+	}
+	
+	
+	const buttonsMore = document.querySelectorAll('.accordeon__more');
+	
+	buttonsMore.forEach(function(buttonMore) {
+		buttonMore.addEventListener('click', function(event) {
+			// Получаем все input в форме
+			const inputs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker)');
+			const buttonId = buttonMore.getAttribute('data-id');
+			let allFilled = true;
+
+			// Проверяем каждое поле
+			inputs.forEach(function(input) {
+				if (input.value.trim() === '') {
+					allFilled = false;
+				} else {
+					let inputName = input.getAttribute('name');
+					if((inputName != null)) {
+						document.querySelector('[data-name="'+ inputName +'"]').innerHTML = input.value;
+					}
+				}
+			});
+
+			// Если не все поля заполнены, отменяем отправку формы и выводим сообщение
+			if (!allFilled) {
+				event.preventDefault(); // Отменяем отправку формы
+				alert('Пожалуйста, заполните все поля!');
+			} else {
+				const parentAccordion = buttonMore.closest('.accordeon-item');
+				const nextAccordion = parentAccordion.nextElementSibling;
+				const finalInfo = document.querySelector('[data-type="'+ buttonId +'"]');
+				
+				parentAccordion.classList.add('hidden');
+				nextAccordion.classList.add('expanded');
+				
+				finalInfo.classList.add('show');
+				
+				document.querySelector('[data-name="delivery-type"]').innerHTML = document.querySelector('.tabs-nav__item.active .order__tabs-title').innerText.trim();
+			}
+		});
+	});
+	
+	const changeButtons = document.querySelectorAll('.change-button');
+	
+	changeButtons.forEach(function(changeButton) {
+		
+		changeButton.addEventListener('click', function(event) {
+			const typeBlock = changeButton.closest('.accordeon__final').getAttribute('data-type');
+			console.log(typeBlock);
+			document.querySelector('.' + typeBlock).classList.remove('hidden');
+			changeButton.closest('.accordeon__final').classList.remove('show');
+		});
+	});
 });
 
 window.addEventListener('scroll', function() {
 	const buttonOrder = document.querySelector('.order');
 	if(buttonOrder) {
 		const buttonOrderPosition = buttonOrder.getBoundingClientRect().top;
-		console.log(buttonOrderPosition);
 		const windowHeight = window.innerHeight;
 
 		if (buttonOrderPosition < windowHeight) {
@@ -6300,6 +6440,7 @@ const delayedLoadingFile = (type, path, ...callback) => {
 			}, 300);
 		});
 	};
+
 };
 const phoneInputs = document.querySelectorAll('input[autocomplete="tel"]');
 
@@ -6308,6 +6449,7 @@ phoneInputs.forEach((input) => {
 	Inputmask({ mask: "+7 (999) 999-9999", clearIncomplete: true }).mask(input);
 });
 
+/*
 const searchInput = document.getElementById("search");
 const searchResult = document.getElementById("search-result__products");
 const searchCategory = document.querySelector('.search-category');
@@ -6368,4 +6510,25 @@ searchInput.addEventListener('input', function() {
 	} else {
 		suggestionsList.style.display = 'none';
 	}
-});
+}); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

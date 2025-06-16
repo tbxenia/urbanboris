@@ -802,9 +802,73 @@
 										Санкт-петербург
 									</div>
 								</div>
-								
 								<div class="accordeon">
-									<div class="accordeon-item expanded">
+									<div class="accordeon__final" data-type="delivery">
+										<div class="accordeon__final-top">
+											<div class="accordeon-header">
+												Способ получения <div class="extra-title change-button"><a href="#">изменить</a></div>
+											</div>
+										</div>
+										<div class="accordeon__final-middle">
+											<div class="accordeon__final-list">
+												<div class="accordeon__final-key">
+													Cпособ получения
+												</div>
+												<div class="accordeon__final-value" data-name="delivery-type">
+													
+												</div>
+											</div>
+											<div class="accordeon__final-list">
+												<div class="accordeon__final-key">
+													Адрес
+												</div>
+												<div class="accordeon__final-value">
+													<span data-name="city"></span>,
+													<span data-name="house"></span>,
+													<span data-name="building"></span>,
+													<span data-name="apartment"></span>,
+													<span data-name="entrance"></span>,
+													<span data-name="floor"></span>,
+													<span data-name="intercom"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="accordeon__final" data-type="personal">
+										<div class="accordeon__final-top">
+											<div class="accordeon-header">
+												Личные данные <div class="extra-title change-button"><a href="#">изменить</a></div>
+											</div>
+										</div>
+										<div class="accordeon__final-middle">
+											<div class="accordeon__final-list">
+												<div class="accordeon__final-key">
+													Имя
+												</div>
+												<div class="accordeon__final-value" data-name="username">
+													
+												</div>
+											</div>
+											<div class="accordeon__final-list">
+												<div class="accordeon__final-key">
+													Фамилия
+												</div>
+												<div class="accordeon__final-value" data-name="userlastname">
+													
+												</div>
+											</div>
+											<div class="accordeon__final-list">
+												<div class="accordeon__final-key">
+													Телефон
+												</div>
+												<div class="accordeon__final-value" data-name="userphone">
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								
+									<div class="accordeon-item expanded delivery">
 										<div class="accordeon-header">
 											Способ получения
 										</div>
@@ -851,34 +915,34 @@
 																</div>
 																<div class="new-address">
 																	<div class="form-field">
-																		<input type="text" placeholder="Город, область, улица">
+																		<input type="text" placeholder="Город, область, улица" name="city">
 																	</div>
 																	<div class="form-wrapper">
 																		<div class="form-field">
-																			<input type="text" placeholder="Дом">
+																			<input type="text" placeholder="Дом" name="house">
 																		</div>
 																		<div class="form-field">
-																			<input type="text" placeholder="Корпус">
+																			<input type="text" placeholder="Корпус" name="building">
 																		</div>
 																		<div class="form-field">
-																			<input type="text" placeholder="Квартира">
+																			<input type="text" placeholder="Квартира" name="apartment">
 																		</div>
 																	</div>
 																	<div class="form-wrapper">
 																		<div class="form-field">
-																			<input type="text" placeholder="Подъезд">
+																			<input type="text" placeholder="Подъезд" name="entrance">
 																		</div>
 																		<div class="form-field">
-																			<input type="text" placeholder="Этаж">
+																			<input type="text" placeholder="Этаж" name="floor">
 																		</div>
 																		<div class="form-field">
-																			<input type="text" placeholder="Домофон">
+																			<input type="text" placeholder="Домофон" name="intercom">
 																		</div>
 																	</div>
 																</div>
 																<div class="form-wrapper date-time">
 																	<div class="form-field datapicker">
-																		 <input type="text" id="datepicker" placeholder="Выберете дату">
+																		 <input type="text" id="datepicker" placeholder="Выберете дату" name="date">
 																	</div>
 																	<div class="form-field">
 																		<div class="custom-select">
@@ -916,38 +980,13 @@
 														</div>
 													</div>
 												</div>
-												<div class="accordeon__more">
+												<div class="accordeon__more" data-id="delivery">
 													далее
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="accordeon__final">
-										<div class="accordeon__final-top">
-											<div class="accordeon-header">
-												Способ получения <div class="extra-title"><a href="#">изменить</a></div>
-											</div>
-										</div>
-										<div class="accordeon__final-middle">
-											<div class="accordeon__final-list">
-												<div class="accordeon__final-key">
-													Cпособ получения
-												</div>
-												<div class="accordeon__final-value">
-													Доставка в пвз сдэк
-												</div>
-											</div>
-											<div class="accordeon__final-list">
-												<div class="accordeon__final-key">
-													Адрес
-												</div>
-												<div class="accordeon__final-value">
-													Нижний Сусальный переулок, 5 стр.1, помещение 23
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="accordeon-item">
+									<div class="accordeon-item personal">
 										<div class="accordeon-header">
 											Личные данные <!--div class="extra-title"><a href="#">Войти на сайт</a>, чтобы заполнить автоматически</div-->
 										</div>
@@ -955,14 +994,18 @@
 											<div class="content-block">
 												<div class="order__personal-form content-block">
 													<div class="form-field">
-														<input type="text" placeholder="Имя">
+														<input type="text" placeholder="Имя" name="username">
 													</div>
 													<div class="form-field">
-														<input type="text" placeholder="Фамилия">
+														<input type="text" placeholder="Фамилия" name="userlastname">
 													</div>
 													<div class="form-field">
-														<input type="tel" autocomplete="tel" placeholder="+7 (999) 999-99-99">
+														<input type="text" autocomplete="tel" placeholder="+7 (999) 999-99-99" name="userphone">
 													</div>
+												</div>
+												
+												<div class="accordeon__more" data-id="personal">
+													далее
 												</div>
 											</div>
 										</div>
