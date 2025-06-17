@@ -7407,3 +7407,53 @@ input[type="range"]::-webkit-slider-thumb {
         margin-bottom: 10px;
     }
 }
+
+/* about */
+
+.page-about {
+	max-width: 638px;
+	margin: 40px auto;
+	font-size: 16px;
+}
+
+.page-about h2 {
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+
+.page-about p {
+	margin-bottom: 20px;
+}
+
+.page-about p:last-child {
+	margin-bottom: 0;
+}
+
+.page-about__extra-text {
+	margin-top: 80px;
+	font-weight: 700;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.page-about__extra-text p {
+	max-width: 380px;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.page-about__extra-text a {
+	margin: 0 auto;
+}
+
+.page__img img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media(min-width: 768px) {
+	.page__img {
+		margin-right: -40px;
+	}
+}

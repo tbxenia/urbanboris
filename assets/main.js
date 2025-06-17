@@ -6346,37 +6346,43 @@ document.addEventListener('DOMContentLoaded', function() {
 		buttonMore.addEventListener('click', function(event) {
 			// Получаем все input в форме
 			const inputs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker)');
+			const divs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker)');
 			const buttonId = buttonMore.getAttribute('data-id');
 			let allFilled = true;
 
 			// Проверяем каждое поле
-			inputs.forEach(function(input) {
-				if (input.value.trim() === '') {
-					allFilled = false;
-				} else {
-					let inputName = input.getAttribute('name');
-					if((inputName != null)) {
-						document.querySelector('[data-name="'+ inputName +'"]').innerHTML = input.value;
-					}
-				}
-			});
+			
+			
+				
+					inputs.forEach(function(input) {
+						if (input.value.trim() === '') {
+							allFilled = false;
+						} else {
+							let inputName = input.getAttribute('name');
+							if((inputName != null)) {
+								document.querySelector('[data-name="'+ inputName +'"]').innerHTML = input.value;
+							}
+						}
+					});
+				
 
-			// Если не все поля заполнены, отменяем отправку формы и выводим сообщение
-			if (!allFilled) {
-				event.preventDefault(); // Отменяем отправку формы
-				alert('Пожалуйста, заполните все поля!');
-			} else {
-				const parentAccordion = buttonMore.closest('.accordeon-item');
-				const nextAccordion = parentAccordion.nextElementSibling;
-				const finalInfo = document.querySelector('[data-type="'+ buttonId +'"]');
-				
-				parentAccordion.classList.add('hidden');
-				nextAccordion.classList.add('expanded');
-				
-				finalInfo.classList.add('show');
-				
-				document.querySelector('[data-name="delivery-type"]').innerHTML = document.querySelector('.tabs-nav__item.active .order__tabs-title').innerText.trim();
-			}
+				// Если не все поля заполнены, отменяем отправку формы и выводим сообщение
+				if (!allFilled) {
+					event.preventDefault(); // Отменяем отправку формы
+					alert('Пожалуйста, заполните все поля!');
+				} else {
+					const parentAccordion = buttonMore.closest('.accordeon-item');
+					const nextAccordion = parentAccordion.nextElementSibling;
+					const finalInfo = document.querySelector('[data-type="'+ buttonId +'"]');
+					
+					parentAccordion.classList.add('hidden');
+					nextAccordion.classList.add('expanded');
+					
+					finalInfo.classList.add('show');
+					
+					document.querySelector('[data-name="delivery-type"]').innerHTML = document.querySelector('.tabs-nav__item.active .order__tabs-title').innerText.trim();
+				}
+			
 		});
 	});
 	
@@ -6391,6 +6397,43 @@ document.addEventListener('DOMContentLoaded', function() {
 			changeButton.closest('.accordeon__final').classList.remove('show');
 		});
 	});
+	
+	
+	const accElement = document.querySelectorAll('.order__tabs');
+	
+	
+	accElement.forEach(function(el) {
+
+		// Функция для проверки заполненности всех полей формы
+		function checkFormFields() {
+		  const inputs = el.querySelectorAll('input, textarea, select');
+		  let allFilled = true;
+
+		  inputs.forEach(input => {
+			if (input.type !== 'checkbox' && input.type !== 'radio') {
+			  if (!input.value.trim()) {
+				allFilled = false;
+			  }
+			} else {
+			  // Для чекбоксов и радиокнопок можно добавить свою логику
+			  if (!input.checked) {
+				allFilled = false;
+			  }
+			}
+		  });
+
+		  if (allFilled) {
+			// Все поля заполнены — добавляем класс
+			el.classList.add('done');
+		  } else {
+			// Не все поля заполнены — убираем класс
+			el.classList.add('2done');
+		  }
+		}
+		
+		el.addEventListener('input', checkFormFields);
+	});
+
 });
 
 window.addEventListener('scroll', function() {
