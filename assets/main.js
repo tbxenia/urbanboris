@@ -4253,7 +4253,6 @@ function Navigation(_ref) {
     toggleEl(nextEl, swiper.isEnd && !swiper.params.rewind);
   }
   function onPrevClick(e) {
-	  console.log('test');
     e.preventDefault();
     if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
     swiper.slidePrev();
@@ -6166,7 +6165,30 @@ if(document.getElementById('datepicker')) {
 const tabsNavItems = document.querySelectorAll('.tabs-nav__item');
 
 tabsNavItems.forEach(function(item) {
+
+	
 	item.addEventListener('click', function() {
+		
+		let addressBlock = document.querySelector('.address');
+		
+		if(addressBlock) {
+			const tempDiv = document.createElement('div');
+			tempDiv.innerHTML = addressBlock.innerHTML;
+			function removeTextNodes(node) {
+			  node.childNodes.forEach(child => {
+				if (child.nodeType === Node.TEXT_NODE) {
+				  child.textContent = '';
+				} else if (child.nodeType === Node.ELEMENT_NODE) {
+				  removeTextNodes(child);
+				}
+			  });
+			}
+
+			removeTextNodes(tempDiv);
+
+			addressBlock.innerHTML = tempDiv.innerHTML;
+		}
+		
 		let tabId = this.getAttribute('data-tab');
 		tabsNavItems.forEach(function(navItem) {
 			navItem.classList.remove('active');
@@ -6225,7 +6247,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	radioButtons.forEach(radio => {
 		radio.addEventListener('click', function() {
-			console.log('test')
 			radioButtons.forEach(rb => {
 				rb.checked = false;
 			});
@@ -6247,7 +6268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const buttonPromoEnter = document.querySelector('.promo-field-opener');
 	if(buttonPromoEnter) {
 		buttonPromoEnter.addEventListener('click', function() {
-			console.log('test')
+			
 		});
 	}
 	
@@ -6344,9 +6365,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	buttonsMore.forEach(function(buttonMore) {
 		buttonMore.addEventListener('click', function(event) {
+			
+			const addressNew = document.querySelector('.address-new');
+			
+			if(!addressNew) {
+				addressNew.classList.add('hidden');
+			} else {
+				addressNew.classList.remove('hidden');
+			}
+			
 			// Получаем все input в форме
-			const inputs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker)');
-			const divs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker)');
+			const inputs = buttonMore.parentNode.querySelectorAll('input[type="text"]:not(#datepicker):not(.qs-overlay-year), input[type="radio"]:checked');
 			const buttonId = buttonMore.getAttribute('data-id');
 			let allFilled = true;
 
@@ -6365,10 +6394,8 @@ document.addEventListener('DOMContentLoaded', function() {
 						}
 					});
 				
-
-				// Если не все поля заполнены, отменяем отправку формы и выводим сообщение
 				if (!allFilled) {
-					event.preventDefault(); // Отменяем отправку формы
+					event.preventDefault();
 					alert('Пожалуйста, заполните все поля!');
 				} else {
 					const parentAccordion = buttonMore.closest('.accordeon-item');
@@ -6398,42 +6425,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 	
+	const formBlock = document.querySelectorAll('.order__personal-form');
 	
-	const accElement = document.querySelectorAll('.order__tabs');
-	
-	
-	accElement.forEach(function(el) {
-
-		// Функция для проверки заполненности всех полей формы
-		function checkFormFields() {
-		  const inputs = el.querySelectorAll('input, textarea, select');
-		  let allFilled = true;
-
-		  inputs.forEach(input => {
-			if (input.type !== 'checkbox' && input.type !== 'radio') {
-			  if (!input.value.trim()) {
-				allFilled = false;
+	formBlock.forEach(el => {
+		  const inputs = el.querySelectorAll('input[type="text"]:not(#datepicker):not(.qs-overlay-year)');
+		  
+		  el.addEventListener("input", (event) => {
+			  
+			  const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+			  
+			  if (allFilled) {
+				el.querySelector('.accordeon__more').classList.add('active');
+			  } else {
+				el.querySelector('.accordeon__more').classList.remove('active');
 			  }
-			} else {
-			  // Для чекбоксов и радиокнопок можно добавить свою логику
-			  if (!input.checked) {
-				allFilled = false;
-			  }
-			}
-		  });
-
-		  if (allFilled) {
-			// Все поля заполнены — добавляем класс
-			el.classList.add('done');
-		  } else {
-			// Не все поля заполнены — убираем класс
-			el.classList.add('2done');
-		  }
-		}
-		
-		el.addEventListener('input', checkFormFields);
+			});
 	});
-
 });
 
 window.addEventListener('scroll', function() {

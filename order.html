@@ -822,14 +822,11 @@
 												<div class="accordeon__final-key">
 													Адрес
 												</div>
-												<div class="accordeon__final-value">
-													<span data-name="city"></span>
-													<span data-name="house"></span>
-													<span data-name="building"></span>
-													<span data-name="apartment"></span>
-													<span data-name="entrance"></span>
-													<span data-name="floor"></span>
-													<span data-name="intercom"></span>
+												<div class="accordeon__final-value address">
+													<span data-name="address"></span>
+													<div class="address-new">
+														<span data-name="city"></span>, <span data-name="house"></span>, <span data-name="building">, </span>, <span data-name="apartment">, </span>, <span data-name="entrance">, </span>, <span data-name="floor">, </span>, <span data-name="intercom">, </span>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -912,15 +909,6 @@
 													<div class="order__tabs-content tabs-content">
 														<div class="tab active" id="tab-1">
 															<div class="order__personal-form">
-																<div class="form-field">
-																	<div class="custom-select">
-																		<div class="select-selected" data-type="address">Новый адрес</div>
-																		<div class="select-items select-hide">
-																			<div data-value="newAddress" >Новый адрес</div>
-																			<div data-value="optionAddress2">г Москва, ул Мясницкая, д 12, кв. 23, 1 подъезд, 6 этаж</div>
-																		</div>
-																	</div>
-																</div>
 																<div class="new-address">
 																	<div class="form-field">
 																		<input type="text" placeholder="Город, область, улица" name="city">
@@ -964,32 +952,37 @@
 																	</div>
 																</div>
 																<div class="form-field">
-																	<textarea type="text" placeholder="Комментарий к заказу"></textarea>
+																	<textarea name="usercomments" placeholder="Комментарий к заказу"></textarea>
+																</div>
+																
+																<div class="accordeon__more" data-id="delivery">
+																	далее
 																</div>
 															</div>
 														</div>
 														<div class="tab" id="tab-2">
 															<div class="order__personal-form">
 																<div class="form-field">
-																	<input type="radio" name="choose-shop" id="shop-1" value="г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н">
+																	<input type="radio" name="address" id="shop-1" value="г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н" checked>
 																	<label for="shop-1">
 																		г. Санкт-Петербург, пр-кт Большой П.С. 69А, помещение 5-Н
 																	</label>
 																</div>
 																<div class="form-field">
-																	<input type="radio" name="choose-shop" id="shop-2" value="г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н">
+																	<input type="radio" name="address" id="shop-2" value="г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н">
 																	<label for="shop-2">
 																		г. Москва, пр-кт Большой П.С. 69А, помещение 5-Н
 																	</label>
+																</div>
+																
+																<div class="accordeon__more" data-id="delivery">
+																	далее
 																</div>
 															</div>
 														</div>
 														<div class="tab" id="tab-3">
 														</div>
 													</div>
-												</div>
-												<div class="accordeon__more" data-id="delivery">
-													далее
 												</div>
 											</div>
 										</div>
@@ -1013,10 +1006,11 @@
 													<div class="form-field">
 														<input type="text" placeholder="Почта" name="useremail">
 													</div>
-												</div>
-												
-												<div class="accordeon__more" data-id="personal">
-													далее
+													
+													
+													<div class="accordeon__more" data-id="personal">
+														далее
+													</div>
 												</div>
 											</div>
 										</div>

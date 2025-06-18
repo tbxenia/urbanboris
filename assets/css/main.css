@@ -6379,6 +6379,12 @@ button.swiper-pagination-bullet {
 	text-align: center;
 	cursor: pointer;
 	margin-top: 10px;
+	width: 100%;
+}
+
+.cart__order .accordeon__more.active {
+	color: var(--black);
+	border: 1px solid var(--black);
 }
 
 .order__total .order__total-products {
@@ -6656,7 +6662,7 @@ button.swiper-pagination-bullet {
 	border-bottom: 1px solid #F2EFEF;
 }
 
-.form-field input[checked]+label {
+.form-field input:checked+label {
 	border-bottom: 1px solid var(--primary);
 }
 
@@ -6672,7 +6678,7 @@ button.swiper-pagination-bullet {
 	position: absolute;
 }
 
-.form-field input[checked]+label:after {
+.form-field input:checked+label:after {
 	width: 8px;
 	height: 8px;
 	background: var(--primary);
