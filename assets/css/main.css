@@ -7463,3 +7463,17 @@ input[type="range"]::-webkit-slider-thumb {
 		margin-right: -40px;
 	}
 }
+
+.address-new>* {
+	display: inline-block;
+}
+.address-new>*span:after {
+	content: ', ';
+	width:20px;
+	height: 20px;
+	display:block!important;
+}
+
+video {
+    width: 100%;
+}
