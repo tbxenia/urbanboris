@@ -7476,4 +7476,5 @@ input[type="range"]::-webkit-slider-thumb {
 
 video {
     width: 100%;
+	display: block;
 }
