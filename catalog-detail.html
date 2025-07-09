@@ -603,7 +603,7 @@
 														<use xlink:href="./assets/sprite.svg#icon-cart"></use>
 													</svg>
 												</button>
-												<button class="btn btn-cart-wide order"><span>Добавить в корзину</span>
+												<button class="btn btn-cart-wide order addtocart-opener" data-modal-opener="addtocart-modal" type="submit" data-productid="9922"><span>Добавить в корзину</span>
 												</button>
 												<div class="product-cart__props-row">
 													<button class="btn size-chooser-btn"><span>XS</span>
@@ -797,7 +797,7 @@
 		</div>
 		<section class="catalog-detail">
 			<div class="container-fluid">
-				<div class="catalog-detail__grid">
+				<div class="catalog-detail__grid" id="product-item-9922">
 					<div class="catalog-detail__grid-item catalog-detail__grid-item--gallery">
 						<div class="swiper catalog-detail-slider">
 							<a class="btn btn-light catalog-detail-back-btn" href="catalog-section">
@@ -820,8 +820,8 @@
 						<div class="catalog-detail__grid-item-wrapper">
 							<form action="#">
 								<div class="catalog-detail__field catalog-detail__field--head">
-									<h2 class="base-title catalog-detail__title">Брюки спортивные</h2>
-									<div class="price-row"><span class="price-row__item">11 490 ₽</span><span class="price-row__item price-row__item--old">25 490 ₽</span>
+									<h2 class="base-title catalog-detail__title title">Брюки спортивные</h2>
+									<div class="price-row"><span class="price-row__item price">11 490 ₽</span><span class="price-row__item price-row__item--old old-price">25 490 ₽</span>
 									</div>
 									<button class="btn btn-fav wide" type="button">
 										<svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
@@ -885,7 +885,7 @@
 									</button>
 								</div>
 								<div class="catalog-detail__field catalog-detail__field--add-btn">
-									<button class="btn btn-primary wide order" type="submit"><span>добавить в корзину <span>11 490 ₽</span></span>
+									<button class="btn btn-primary wide order addtocart-opener" data-modal-opener="addtocart-modal" type="submit" data-productid="9922"><span>добавить в корзину <span>11 490 ₽</span></span>
 									</button>
 								</div>
 								<div class="catalog-detail__field catalog-detail__field--props"><small>Артикул: URB/-FPNT-1-FEM</small><small>на модели размер: M</small><small>параметры модели: рост 180 см. 86/60/91</small></div>
@@ -1010,7 +1010,7 @@
 												<use xlink:href="./assets/sprite.svg#icon-cart"></use>
 											</svg>
 										</button>
-										<button class="btn btn-cart-wide"><span>Добавить в корзину</span>
+										<button class="btn btn-primary wide order addtocart-opener" data-modal-opener="addtocart-modal" type="submit" data-productid="9922"><span>добавить в корзину</span></button>
 										</button>
 										<div class="product-cart__props-row">
 											<button class="btn size-chooser-btn"><span>XS</span>
@@ -1793,8 +1793,50 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal addtocart-modal" id="addtocart-modal">
+		<div class="modal-wrapper">
+			<button class="modal-closer main-btn" aria-label="Закрыть">
+				<svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18.456 1.48528L1.48542 18.4558M1.48542 1.48528L18.456 18.4558" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+			<div class="modal-content">
+				<div class="addtocart__title">
+					товар добавлен в корзину
+				</div>
+				<div class="addtocart__text item">
+					<div class="item__img img">
+					</div>
+					<div class="item__info">
+						<div class="cart-item__header">
+							<span class="cart-item__title title"></span>
+						</div>
+						<div class="cart-item__props">
+							<div class="cart-item__props-item"><span>Размер:</span><span class="size"></span></div>
+							<div class="cart-item__props-item"><span>Цвет:</span><span class="color"></span></div>
+						</div>
+					</div>
+					<div class="item__price">
+						<div class="cart-item__price">
+							<span class="cart-item__price-value price"></span>
+							<span class="cart-item__price-value cart-item__price-value--old old-price"></span>
+						</div>
+					</div>
+				</div>
+				<div class="addtocart__buttons">
+					<a class="btn btn-light more-shopping" href="#">
+						<span>продолжить покупки</span>
+						<svg width="11" height="10" role="img" aria-hidden="true" focusable="false">
+							<use xlink:href="./assets/sprite.svg#icon-arrow-up"></use>
+						</svg>
+					</a>
+					<a href="/" class="btn btn-primary wide"><span>перейти в корзину</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="sticky-button sticky-button__static">
-		<button class="btn btn-primary wide" type="submit"><span>добавить в корзину <span>11 490 ₽</span></span></button>
+		<button class="btn btn-primary wide addtocart-opener" data-modal-opener="addtocart-modal" type="submit" data-productid="9922"><span>добавить в корзину <span>11 490 ₽</span></span></button>
 	</div>
 	<script src="./assets/main.js"></script>
 </body>
