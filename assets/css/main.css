@@ -7553,7 +7553,11 @@ video {
         right: 0;
         bottom: 0;
         max-height: 540px;
-        padding: 20px;
+        padding: 20px 20px 60px 20px;
+	}
+	
+	.addtocart__title {
+		font-size: 16px;
 	}
 	
 	.addtocart-modal.active .modal-wrapper {
