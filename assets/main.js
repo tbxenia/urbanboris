@@ -7265,7 +7265,33 @@ document.addEventListener("DOMContentLoaded", () => {
 		  
 		}
 	});		
+	
+	const selectionListButton = document.querySelectorAll('.show-products');
 
+selectionListButton.forEach(elem => {
+	elem.addEventListener('click', function() {
+		const parentDiv = elem.parentNode;
+		parentDiv.querySelector('.selection-detail__products').classList.toggle('active');
+		const burger = document.querySelector(".burger");
+		const body$2 = document.querySelector("body");
+	if (burger) {
+		burger.addEventListener("click", () => {
+		burger.classList.toggle("active");
+		if (burger.classList.contains("active")) {
+			body$2.classList.add("body-locked");
+			document.querySelectorAll(".top-menu").forEach((item) => {
+				item.classList.add('hidden');
+			});
+		} else {
+			body$2.classList.remove("body-locked");
+			document.querySelectorAll(".top-menu").forEach((item) => {
+				item.classList.remove('hidden');
+			});
+		}
+ 	});
+	}
+	});
+	});
 });
 
 window.addEventListener('scroll', function() {
