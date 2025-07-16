@@ -7041,6 +7041,7 @@ button.swiper-pagination-bullet {
 
 .selection-detail__products .selection-detail__products-item .selection-detail__products-cart {
 	margin-left: auto;
+	cursor: pointer;
 }
 
 .selection-detail__products .selection-detail__products-item .selection-detail__products-title {
