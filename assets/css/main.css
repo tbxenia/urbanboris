@@ -7669,3 +7669,42 @@ video {
         align-items: flex-start;
     }
 }
+
+.colors_photo_item {
+	display: none !important;
+}
+.colors_photo_item.active {
+	display: block !important;
+}
+
+.sizepicker-nosize {
+	display: none;
+}
+.sizepicker-nosize.active {
+	display: block;
+	position: absolute;
+	background: var(--primary);
+	color: var(--white);
+	padding: 5px;
+	font-size: 12px;
+	top: -7px;
+    left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+.sizepicker-nosize:before {
+	width: 10px;
+	height: 10px;
+	background: var(--primary);
+	left: 50%;
+    bottom: -5px;
+    transform: translate(-50%, 0) rotate(45deg);
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.catalog-detail__field--sizepicker .main-picker:not(.active) {
+	display: none;
+}

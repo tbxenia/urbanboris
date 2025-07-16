@@ -2087,10 +2087,17 @@
 					<path d="M18.456 1.48528L1.48542 18.4558M1.48542 1.48528L18.456 18.4558" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
 			</button>
-			<div class="modal-content">
+			<div class="modal-content catalog-detail">
 				<div class="checkproduct__item">
 					<div class="checkproduct__item-img">
-						<img src="./assets/img/catalog-detail-mock-1.png" alt="брюки спортивные" width="480" height="800">
+						<div class="colors_photo tabs">													
+							<div class="colors_photo_item tabs_item active" data-color="chernyy">			
+								<img src="./assets/img/selection5-mobile.png" alt="Продукция">
+							</div>						
+							<div class="colors_photo_item tabs_item" data-color="zheltyy">			
+								<img src="./assets/img/selection6-mobile.png" alt="Продукция">
+							</div>
+						</div>
 					</div>
 					<div class="catalog-detail__grid-item-wrapper">
 							<form action="#">
@@ -2106,58 +2113,89 @@
 								</div>
 								<div class="catalog-detail__field catalog-detail__field--colorpicker">
 									<div class="main-picker colorpicker">
-										<span class="base-text main-picker__headline">Цвет:<span>графитовый</span></span>
-										<div class="main-picker__content">
-											<div class="main-picker__item main-picker__item--colorpicker">
-												<label style="background-color: #0b131e;">
-												<input type="radio" name="colorpicker-item" value="Графитовый" checked="">
+										<span class="base-text main-picker__headline main-picker__color">Цвет:<span>Черный</span></span>
+										<div class="main-picker__content tabs">
+											<div class="main-picker__item main-picker__item--colorpicker tabs-nav__item active" data-tab="chernyy" title="Черный">
+												<label style="background-color: #000000;" for="Черный">
+													<input type="radio" disabled="" id="Черный" name="colorpicker-item" value="Черный" />
 												</label>
 											</div>
-											<div class="main-picker__item main-picker__item--colorpicker">
-												<label style="background-color: #d0d0d0;">
-												<input type="radio" name="colorpicker-item" value="Серый">
-												</label>
-											</div>
-											<div class="main-picker__item main-picker__item--colorpicker">
-												<label style="background-color: #ffffff;">
-												<input type="radio" name="colorpicker-item" value="Белый">
+											<div class="main-picker__item main-picker__item--colorpicker tabs-nav__item" data-tab="zheltyy" title="Желтый">
+												<label style="background-color: #ffff00;" for="Желтый">
+													<input type="radio" disabled="" id="Желтый" name="colorpicker-item" value="Желтый" />
 												</label>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="catalog-detail__field catalog-detail__field--sizepicker">
-									<div class="main-picker">
-										<span class="base-text main-picker__headline">Размер:<span>M</span></span>
+								<div class="catalog-detail__field catalog-detail__field--sizepicker tabs-content">
+									<span class="sizepicker-nosize">Выберите размер</span>
+
+									<div class="main-picker tab" data-color="chernyy" data-os="">
+										<span class="base-text main-picker__headline main-picker__size">Размер :<span></span></span>
 										<div class="main-picker__content">
 											<div class="main-picker__item main-picker__item--sizepicker">
-												<label>
-												<span>XS</span>
-												<input type="radio" name="sizepicker-item" value="XS">
+												<label for="10558">
+													<span>S</span>
+													<input type="radio" disabled="" id="10558" name="sizepicker-item" value="S" data-productid="10558" data-colorname="Черный" data-sizename="S" data-price="57000 ₽" data-oldprice="59900 ₽" />
 												</label>
 											</div>
 											<div class="main-picker__item main-picker__item--sizepicker">
-												<label>
-												<span>S</span>
-												<input type="radio" name="sizepicker-item" value="S">
+												<label for="10560">
+													<span>M</span>
+													<input type="radio" disabled="" id="10560" name="sizepicker-item" value="M" data-productid="10560" data-colorname="Черный" data-sizename="M" data-price="57000 ₽" data-oldprice="59900 ₽" />
 												</label>
 											</div>
 											<div class="main-picker__item main-picker__item--sizepicker">
-												<label>
-												<span>M</span>
-												<input type="radio" name="sizepicker-item" value="M" checked="">
+												<label for="10562">
+													<span>L</span>
+													<input type="radio" disabled="" id="10562" name="sizepicker-item" value="L" data-productid="10562" data-colorname="Черный" data-sizename="L" data-price="57000 ₽" data-oldprice="59900 ₽" />
 												</label>
 											</div>
 											<div class="main-picker__item main-picker__item--sizepicker">
-												<label>
-												<span>L</span>
-												<input type="radio" name="sizepicker-item" value="L">
+												<label for="10564">
+													<span>XL</span>
+													<input type="radio" disabled="" id="10564" name="sizepicker-item" value="XL" data-productid="10564" data-colorname="Черный" data-sizename="XL" data-price="57000 ₽" data-oldprice="59900 ₽" />
+												</label>
+											</div>
+											<div class="main-picker__item main-picker__item--sizepicker">
+												<label for="10566">
+													<span>2XL</span>
+													<input type="radio" disabled="" id="10566" name="sizepicker-item" value="2XL" data-productid="10566" data-colorname="Черный" data-sizename="2XL" data-price="57000 ₽" data-oldprice="59900 ₽" />
+												</label>
+											</div>
+											<div class="main-picker__item main-picker__item--sizepicker">
+												<label for="10570">
+													<span>4XL</span>
+													<input type="radio" disabled="" id="10570" name="sizepicker-item" value="4XL" data-productid="10570" data-colorname="Черный" data-sizename="4XL" data-price="57000 ₽" data-oldprice="59900 ₽" />
 												</label>
 											</div>
 										</div>
 									</div>
-									<button class="btn btn-thin underlined" data-modal-opener="size-table-modal"><span>Таблица размеров</span>
-									</button>
+
+									<div class="main-picker tab active" data-color="zheltyy" data-os="">
+										<span class="base-text main-picker__headline main-picker__size">Размер :<span></span></span>
+										<div class="main-picker__content">
+											<div class="main-picker__item main-picker__item--sizepicker">
+												<label for="10163">
+													<span>S</span>
+													<input type="radio" disabled="" id="10163" name="sizepicker-item" value="S" data-productid="10163" data-colorname="Желтый" data-sizename="S" data-price="57000 ₽" data-oldprice="59900 ₽" />
+												</label>
+											</div>
+											<div class="main-picker__item main-picker__item--sizepicker">
+												<label for="10563">
+													<span>XL</span>
+													<input type="radio" disabled="" id="10563" name="sizepicker-item" value="XL" data-productid="10563" data-colorname="Желтый" data-sizename="XL" data-price="57000 ₽" data-oldprice="59900 ₽" />
+												</label>
+											</div>
+											<div class="main-picker__item main-picker__item--sizepicker">
+												<label for="10565">
+													<span>2XL</span>
+													<input type="radio" disabled="" id="10565" name="sizepicker-item" value="2XL" data-productid="10565" data-colorname="Желтый" data-sizename="2XL" data-price="57000 ₽" data-oldprice="59900 ₽" />
+												</label>
+											</div>
+										</div>
+									</div>
 								</div>
 							</form>
 						</div>
