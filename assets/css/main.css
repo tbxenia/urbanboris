@@ -7709,3 +7709,28 @@ video {
 .catalog-detail__field--sizepicker .main-picker:not(.active) {
 	display: none;
 }
+
+.date-label {
+  position: relative;
+  display: inline-block;
+}
+.date-input:invalid + .date-label::before {
+  content: 'ДД/ММ/ГГГГ';
+  color: grey;
+  margin-left: 10px;
+}
+.date-input:focus + .date-label::before {
+  content: none;
+}
+
+
+input[type="date"].var3:before {
+  content: attr(placeholder);
+  color: grey;
+  text-align: left;
+  margin-right: 10px;
+  /* Дополнительные стили */
+}
+input[type="date"].var3:focus:before {
+  content: none;
+}

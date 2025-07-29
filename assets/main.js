@@ -7352,4 +7352,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 		});
 	});
+	
+	const inputVar2 = document.querySelector('.var2'); 
+
+	inputVar2.addEventListener('focus', function(){
+	  this.type = 'date';
+	});
+	inputVar2.addEventListener('blur', function(){
+	  if(this.value === '') {
+		this.type = 'text'; 
+	  }
+	});
 })
